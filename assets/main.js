@@ -52,6 +52,8 @@ const SORTEDTIME = SORTEDALPHA.sort((a,b) => a.remainingTime - b.remainingTime);
 
 // LocalStorageSaving
 
+window.localStorage.setItem("Tasks", JSON.stringify(TASKS));
+
 // Calculate milliseconds
 function checkDelay(dateGiven){
     let today = new Date().getTime();
@@ -60,7 +62,6 @@ function checkDelay(dateGiven){
 
     return remaining;
 }
-
 
 // CalculateRemainingTime
 
