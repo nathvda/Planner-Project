@@ -69,15 +69,17 @@
         </article>
 
         <!--FORM-->
-                <form name="descritpionForm">
-            <label for="dtaskName"></label>
+        <form name="descriptionForm">
+            <label for="dtaskName">Task name</label>
             <input  name="dtaskN" id="dtaskName"type=" text" placeholder="Task name" required/>
-            <label for="dText"></label>
+
+            <label for="dText">Description</label>
             <input name="dtaskT" id="dText" type="text" placeholder="Description" required/>
-            <label for="dtaskDate"></label>
+
+            <label for="dtaskDate">Date</label>
             <input type="date" id="dtaskDate" value="2022-12-14" />
 
-            <label for="dtaskSelect"></label>
+            <label for="dtaskSelect">Select your task</label>
             <select name="select" id="dtaskSelect" required>
                 <option value="" disabled selected hidden>Choose</option>
                 <option value="Homework">Do my homework</option>
@@ -86,13 +88,14 @@
                 <option value="Purchase">Shopping</option>
                 <option value="Sport">Do my sport</option>
             </select>
-            <label for="dtaskSelectStatut"></label>
+
+            <label for="dtaskSelectStatut">Advancement</label>
             <select name="selectStatut" id="dtaskSelectStatut" required>
                 <option value="" disabled selected hidden>Choose</option>
                 <option value="to do">To do</option>
                 <option value="Doing">Doing</option>
                 <option value="Done">Done</option>
-                <button aria-label="buttonForm" id="descritpionForm__button">Submit</button>
+                <button aria-label="buttonForm" id="descriptionForm__button">Submit</button>
             </select>
         </form>
     </main>
