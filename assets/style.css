@@ -30,7 +30,7 @@ header h1 {
 
 /* FILTERS */
 #filter__button {
-  position: absolute;
+  position: fixed;
   bottom: 1rem;
   right: 5rem;
   height: 3rem;

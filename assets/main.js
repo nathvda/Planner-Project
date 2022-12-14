@@ -1,44 +1,9 @@
-// FOR TEST ONLY
-const TASKS = [{
-    name : "Nom tache",
-    date : "2022-12-25",
-    remainingTime: 200,
-    description : "lorem ipsum dolor sic amet...",
-    type : "1",
-},{
-    name : "Ab tache",
-    date : "2022-12-08",
-    remainingTime: 2,
-    description : "lorem ipsum dolor sic amet...",
-    type : "0",
-},{
-    name : "K tache",
-    date : "2022-12-25",
-    remainingTime : 180,
-    description : "lorem ipsum dolor sic amet...",
-    type : "0",
-},{
-    name : "Q tache",
-    date : "2022-12-27",
-    remainingTime : 22,
-    description : "lorem ipsum dolor sic amet...",
-    type : "0",
-}]
+import { remainingTime, checkDelay } from "./modules/Calculations.js";
+import { sortBy } from "./modules/Sorting.js";
+import { TASKS } from "./modules/Object.js";
+import { NewTask } from "./modules/Class.js";
 
-// CLASS FOR OBJECT
-/* THIS CLASS WILL BE USED TO CREATE THE TASKS */
-
-class NewTask {
-    constructor(name, description, date, type){
-        this.name = name,
-        this.description = description,
-        this.date = date,
-        this.delay = checkDelay(date),
-        this.remainingTime = remainingTime(this.delay),
-        this.type = type
-    }
-}
-
+// Creating new Object
 let trying = new NewTask("jardinage", "manger du chocolat", "2022-12-13", "dormir");
 console.log(trying);
 
@@ -48,7 +13,12 @@ console.log(trying);
 
 // ChangingStatus
 
+// sorting stuff
+let sorting = document.getElementsByName("tasks")[0];
+sorting.addEventListener('change', sortBy)
+
 // Open menus
+/** iden = the id of the button */
 function showBox(iden){
 document.getElementById(`${iden}`).classList.toggle('showFilters');
 }
@@ -60,51 +30,11 @@ filtersButton.addEventListener('click', () => {
     showBox("filters");
  });
 
-// Sorting
-function sortBy(){
-
-let alpha = document.querySelector('input[type="radio"]:checked').value;
-console.log(alpha);
-
-if (alpha == "remainingTime"){
-const SORTEDOBJECT = TASKS.sort((a,b) => a.remainingTime - b.remainingTime);
-console.log(SORTEDOBJECT);
-} else if (alpha == "taskName"){
-const SORTEDOBJECT = TASKS.sort((a,b) => a.name > b.name);
-console.log(SORTEDOBJECT);
-}}
-
-let sorting = document.getElementsByName("tasks")[0];
-sorting.addEventListener('change', sortBy)
 
 // LocalStorageSaving
 
 window.localStorage.setItem("Tasks", JSON.stringify(TASKS));
-
 let currentTasks = localStorage.getItem("Tasks");
-console.log(currentTasks);
-
-// Calculate milliseconds
-function checkDelay(dateGiven){
-    let today = new Date().getTime();
-    let fixed = new Date(dateGiven).getTime();
-    let remaining = fixed - today;
-
-    return remaining;
-}
-
-// CalculateRemainingTime
-function remainingTime(delay){
-
-    let days = Math.floor(delay /(1000 * 60 * 60 * 24));
-    let hours = Math.floor(delay % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
-    let min = Math.floor(delay % (1000 * 60 * 60) / (1000 * 60));
     
-    let timeRemaining = `${Math.abs(days)}d${(hours > 0)? ` ${Math.abs(hours)}h` : ""} ${(min > 0)? `${Math.abs(min)}m ` : ""}${(min > 0) ? "left" : "ago"}`
-    
-    return timeRemaining;
-    }
-    
-    remainingTime();
-
+remainingTime();
 // DisplayRemainingTime
