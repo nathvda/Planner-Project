@@ -38,10 +38,7 @@
 
             <div class="task__wrapper__head"  id="task__wrapper__head">
 
-                <div class="task__wrapper__head__color work" id="task__wrapper__head__color">
-                    <p>
-                        c
-                    </p>
+                <div class="task__wrapper__head__color Work Homework Home Purchase Sport" id="task__wrapper__head__color">
                 </div>
 
                 <div class="task__wrapper__head__title__time" id="task__wrapper__head__title__time">
@@ -56,7 +53,7 @@
                     <p class="task__wrapper__head__date" id="task__wrapper__head__date">
                         Mon 14th dec 
                     </p> 
-                    <button class="task__wrapper__head__done" id="task__wrapper__head__done">
+                    <button class="task__wrapper__head__done ToDo Doing Done" id="task__wrapper__head__done">
                     </button>
                 </div>
             </div>
@@ -75,6 +72,9 @@
             <input  name="dtaskN" id="dtaskName"type=" text" placeholder="Task name" required/>
             <label for="dText"></label>
             <input name="dtaskT" id="dText" type="text" placeholder="Description" required/>
+            <label for="dtaskDate"></label>
+            <input type="date" id="dtaskDate" value="2022-12-14" />
+
             <label for="dtaskSelect"></label>
             <select name="select" id="dtaskSelect" required>
                 <option value="" disabled selected hidden>Choose</option>
@@ -90,7 +90,7 @@
                 <option value="to do">To do</option>
                 <option value="Doing">Doing</option>
                 <option value="Done">Done</option>
-
+                <button aria-label="buttonForm" id="descritpionForm__button">Submit</button>
             </select>
         </form>
     </main>
