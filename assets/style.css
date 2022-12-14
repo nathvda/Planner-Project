@@ -188,7 +188,7 @@ form select option {
   width: 50px;
 }
 
-#add__button {
+#descripForm__button {
   position: absolute;
   bottom: 1rem;
   right: 0rem;
@@ -201,37 +201,35 @@ form select option {
   color: #F1F1F1;
 }
 
-form {
+#descripForm {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  visibility: hidden;
   font-family: "Inter";
 }
-form label {
+#descripForm label {
   padding: 1rem;
   font-size: 0.8rem;
   font-weight: bolder;
 }
-form input[type=text] {
+#descripForm input[type=text] {
   font-size: 0.8rem;
   margin: 0rem 1rem 0rem 1rem;
   padding: 0.5rem;
   border: none;
 }
-form input[type=date] {
+#descripForm input[type=date] {
   padding: 0.5rem;
   margin: 0rem 1rem 0rem 1rem;
   border-radius: 0.3rem;
   border: none;
 }
-form select {
+#descripForm select {
   padding: 0.5rem;
   margin: 0rem 1rem 0rem 1rem;
   border-radius: 0.3rem;
   border: none;
 }
-form select option {
+#descripForm select option {
   background-color: #262626;
   color: #F1F1F1;
 }
@@ -248,5 +246,18 @@ form select option {
   }
   #filters form {
     flex-direction: row;
+  }
+  #descripForm__button {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    right: 2rem;
+  }
+  #descripForm {
+    width: 40%;
+    padding: 2rem;
+    border: none;
+    box-shadow: 0.8rem 0.5rem 2rem rgba(110, 110, 110, 0.5);
+    border-radius: 5%;
   }
 }/*# sourceMappingURL=style.css.map */

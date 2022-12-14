@@ -196,7 +196,7 @@ header{
 
 
 // FORM
-#add__button{
+#descripForm__button{
     position:absolute;
     bottom:1rem;
     right: 0rem;  
@@ -208,11 +208,11 @@ header{
     border-radius:100%;
     color:$white;
 }
-form{
+#descripForm{
     display:flex;
     flex-direction: column;
-    position:absolute;
-    visibility:hidden;
+    //position:absolute;
+    //visibility:hidden;
     font-family: $main;
 
     label{
@@ -262,6 +262,21 @@ form{
         form{
             flex-direction: row;
         }
+    }
+
+    //FORM
+    #descripForm__button{
+      display: flex;
+      justify-content: flex-end;
+      position:fixed;
+      right: 2rem;
+    }
+    #descripForm{
+    width:40%;
+    padding: 2rem;
+    border: none;
+    box-shadow: 0.8rem 0.5rem 2rem  rgba(110,110,110,0.5);
+    border-radius: 5%;
     }
 
 }
