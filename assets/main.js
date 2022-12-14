@@ -46,6 +46,18 @@ console.log(trying);
 
 // ChangingStatus
 
+// Open menus
+function showBox(iden){
+    document.getElementById(`${iden}`).classList.toggle('showFilters');
+}
+
+// 
+let filtersButton = document.getElementById("filter__button");
+
+filtersButton.addEventListener('click', () => {
+    showBox("filters");
+ } );
+
 // Sorting
 const SORTEDALPHA = TASKS.sort((a,b) => a.name > b.name);
 const SORTEDTIME = SORTEDALPHA.sort((a,b) => a.remainingTime - b.remainingTime);
