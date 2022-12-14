@@ -7,7 +7,7 @@ const TASKS = [{
     type : "1",
 },{
     name : "Ab tache",
-    date : "2022-12-25",
+    date : "2022-12-08",
     remainingTime: 2,
     description : "lorem ipsum dolor sic amet...",
     type : "0",
@@ -19,13 +19,15 @@ const TASKS = [{
     type : "0",
 },{
     name : "Q tache",
-    date : "2022-12-25",
+    date : "2022-12-27",
     remainingTime : 22,
     description : "lorem ipsum dolor sic amet...",
     type : "0",
 }]
 
 // CLASS FOR OBJECT
+/* THIS CLASS WILL BE USED TO CREATE THE TASKS */
+
 class NewTask {
     constructor(name, description, date, type){
         this.name = name,
@@ -48,25 +50,39 @@ console.log(trying);
 
 // Open menus
 function showBox(iden){
-    
-    document.getElementById(`${iden}`).classList.toggle('showFilters');
-
+document.getElementById(`${iden}`).classList.toggle('showFilters');
 }
 
-// 
+/* DISPLAYS FILTERS FOR MOBILE */
 let filtersButton = document.getElementById("filter__button");
 
 filtersButton.addEventListener('click', () => {
     showBox("filters");
- } );
+ });
 
 // Sorting
-const SORTEDALPHA = TASKS.sort((a,b) => a.name > b.name);
-const SORTEDTIME = SORTEDALPHA.sort((a,b) => a.remainingTime - b.remainingTime);
+function sortBy(){
+
+let alpha = document.querySelector('input[type="radio"]:checked').value;
+console.log(alpha);
+
+if (alpha == "remainingTime"){
+const SORTEDOBJECT = TASKS.sort((a,b) => a.remainingTime - b.remainingTime);
+console.log(SORTEDOBJECT);
+} else if (alpha == "taskName"){
+const SORTEDOBJECT = TASKS.sort((a,b) => a.name > b.name);
+console.log(SORTEDOBJECT);
+}}
+
+let sorting = document.getElementsByName("tasks")[0];
+sorting.addEventListener('change', sortBy)
 
 // LocalStorageSaving
 
 window.localStorage.setItem("Tasks", JSON.stringify(TASKS));
+
+let currentTasks = localStorage.getItem("Tasks");
+console.log(currentTasks);
 
 // Calculate milliseconds
 function checkDelay(dateGiven){
@@ -78,7 +94,6 @@ function checkDelay(dateGiven){
 }
 
 // CalculateRemainingTime
-
 function remainingTime(delay){
 
     let days = Math.floor(delay /(1000 * 60 * 60 * 24));
