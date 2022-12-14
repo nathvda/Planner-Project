@@ -37,7 +37,7 @@ class NewTask {
     }
 }
 
-let trying = new NewTask("jardinage", "2022-12-13", "manger du chocolat", "dormir");
+let trying = new NewTask("jardinage", "manger du chocolat", "2022-12-13", "dormir");
 console.log(trying);
 
 // DisplayingTask
