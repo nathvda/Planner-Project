@@ -12,6 +12,7 @@ body {
   background-color: #F1F1F1;
 }
 
+/* HEAD */
 header {
   padding: 1em;
   border-bottom: 1px solid #262626;
@@ -27,10 +28,11 @@ header h1 {
   width: 15rem;
 }
 
+/* FILTERS */
 #filter__button {
   position: absolute;
   bottom: 1rem;
-  right: 3rem;
+  right: 5rem;
   height: 3rem;
   width: 3rem;
   background-image: linear-gradient(90deg, #E6C229, #D11149);
@@ -73,39 +75,11 @@ header h1 {
   border-radius: 1rem;
 }
 
-#filter__button:focus + #filters {
-  position: absolute;
+#filters.showFilters {
   visibility: visible;
-  background: white;
-  left: 1rem;
-  right: 1rem;
-  bottom: 5rem;
-  padding: 1rem;
-  border-radius: 1rem;
-}
-#filter__button:focus + #filters .filters__title {
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.05rem;
-  margin-bottom: 1rem;
-}
-#filter__button:focus + #filters form {
-  display: flex;
-  flex-direction: column;
-}
-#filter__button:focus + #filters form label {
-  padding: 1rem;
-}
-#filter__button:focus + #filters form input[type=radio] {
-  display: none;
-}
-#filter__button:focus + #filters form input[type=radio]:checked + label {
-  background-color: #F1F1F1;
-  color: #262626;
-  font-weight: bolder;
-  border-radius: 1rem;
 }
 
+/* TASKS */
 #task__wrapper {
   background-color: yellow;
   box-shadow: 0 0 5px 2px rgba(110, 110, 110, 0.75);
@@ -125,6 +99,9 @@ header h1 {
 #task__wrapper .task__wrapper__head .task__wrapper__head__title__time {
   background-color: blue;
 }
+#task__wrapper .task__wrapper__head .task__wrapper__head__title__time .task__wrapper__head__title {
+  margin: 0;
+}
 #task__wrapper .task__wrapper__head .task__wrapper__head__title__time .task__wrapper__head__time {
   font-size: small;
 }
@@ -138,24 +115,10 @@ header h1 {
   width: 50px;
 }
 
-#add__button {
-  position: absolute;
-  bottom: 1rem;
-  right: 0rem;
-  height: 3rem;
-  width: 3rem;
-  background-image: linear-gradient(90deg, #E6C229, #D11149);
-  padding: 1em;
-  border: none;
-  border-radius: 100%;
-  color: #F1F1F1;
-}
-
+/* FORM */
 form {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  visibility: hidden;
   font-family: "Inter";
 }
 form label {
