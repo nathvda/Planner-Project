@@ -9,7 +9,98 @@
 body {
   font-family: "Inter";
   font-size: 1rem;
+  background-color: #F1F1F1;
 }
-body h1 {
+
+header {
+  padding: 1em;
+  border-bottom: 1px solid #262626;
+}
+header h1 {
   font-family: "Bodoni Moda";
+  color: transparent;
+  background-image: linear-gradient(90deg, #E6C229, #D11149, #1A8FE3, #F17105, #6610F2);
+  -webkit-background-clip: text;
+          background-clip: text;
+  font-weight: bolder;
+  font-size: 2.5rem;
+}
+
+#filter__button {
+  position: absolute;
+  bottom: 1rem;
+  right: 3rem;
+  height: 3rem;
+  width: 3rem;
+  background-image: linear-gradient(90deg, #E6C229, #D11149);
+  padding: 1em;
+  border: none;
+  border-radius: 100%;
+  color: white;
+}
+
+#filters {
+  position: absolute;
+  visibility: hidden;
+  background: white;
+  left: 1rem;
+  right: 1rem;
+  bottom: 5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+#filters .filters__title {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  margin-bottom: 1rem;
+}
+#filters form {
+  display: flex;
+  flex-direction: column;
+}
+#filters form label {
+  padding: 1rem;
+}
+#filters form input[type=radio] {
+  display: none;
+}
+#filters form input[type=radio]:checked + label {
+  background-color: #F1F1F1;
+  color: #262626;
+  font-weight: bolder;
+  border-radius: 1rem;
+}
+
+#filter__button:focus + #filters {
+  position: absolute;
+  visibility: visible;
+  background: white;
+  left: 1rem;
+  right: 1rem;
+  bottom: 5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+#filter__button:focus + #filters .filters__title {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  margin-bottom: 1rem;
+}
+#filter__button:focus + #filters form {
+  display: flex;
+  flex-direction: column;
+}
+#filter__button:focus + #filters form label {
+  padding: 1rem;
+}
+#filter__button:focus + #filters form input[type=radio] {
+  display: none;
+}
+#filter__button:focus + #filters form input[type=radio]:checked + label {
+  background-color: #F1F1F1;
+  color: #262626;
+  font-weight: bolder;
+  border-radius: 1rem;
 }/*# sourceMappingURL=style.css.map */

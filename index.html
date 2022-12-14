@@ -16,16 +16,17 @@
         <header>
             <h1>CHECKit</h1>
         </header>
-        <button aria-label="filters">
+        <button aria-label="filters" id="filter__button">
             <img src="./assets/svg/sort-down-alt.svg">
         </button>
         <article id="filters">
-            <span class="filters__title">Sort by:</span> 
+            <div class="filters__title">Sort by:</div> 
             <form name="tasks">
-                <label for="remainingTime"></label>
+              
                 <input name="tasks" id="remainingTime" type="radio" value="remainingTime"/>
-                <label for="taskName"></label>
+                <label for="remainingTime">Remaining time</label>
                 <input name="tasks" id="taskName" type="radio" value="taskName"/>
+                <label for="taskName">name</label>
             </form>
         </article>
 
