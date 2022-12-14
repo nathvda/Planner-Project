@@ -139,6 +139,40 @@ header{
 
 // TASKS
 
+#task__wrapper{
+    background-color: yellow;
+    box-shadow: 0 0 5px 2px rgba(110,110,110,0.75);
+    border: 1px solid #262626;
+    margin: auto;
+    width: 80vw;
+    height: 60vw;
+    .task__wrapper__head{
+        background-color: red;
+        display: flex;
+        justify-content: space-evenly;
+        .task__wrapper__head__color{
+            background-color: #D11149;
+        }
+        .task__wrapper__head__title__time{
+            background-color: blue;
+            .task__wrapper__head__title{
+            }
+            .task__wrapper__head__time{
+                font-size: small;
+            }
+        }
+        .task__wrapper__head__date__done{
+            background-color: orangered;
+            .task__wrapper__head__date{
+                background-color: green;
+            }
+            .task__wrapper__head__done{
+                width: 50px;
+            }
+        }
+    }
+}
+
 
 // FORM
 
