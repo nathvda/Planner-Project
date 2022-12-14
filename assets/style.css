@@ -103,4 +103,19 @@ header h1 {
   color: #262626;
   font-weight: bolder;
   border-radius: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  #filter__button {
+    display: none;
+  }
+  #filters {
+    visibility: visible;
+    position: static;
+    border-radius: 0;
+    border-bottom: 1px solid #262626;
+  }
+  #filters form {
+    flex-direction: row;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -142,3 +142,22 @@ header{
 // FORM
 
 
+@media screen and (min-width:768px){
+
+    #filter__button{
+
+        display:none;
+    }
+
+    #filters{
+        visibility:visible;
+        position:static;
+        border-radius:0;
+        border-bottom:1px solid $black;
+
+        form{
+            flex-direction: row;
+        }
+    }
+
+}
