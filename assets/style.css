@@ -81,12 +81,13 @@ header h1 {
 
 /* TASKS */
 #task__wrapper {
-  box-shadow: 0 0 5px 2px rgba(110, 110, 110, 0.75);
-  border: 1px solid #262626;
+  box-shadow: 0.8rem 0.5rem 2rem rgba(110, 110, 110, 0.5);
   border-radius: 5px;
-  margin: auto;
-  width: 80vw;
+  margin: 5vw;
+  width: auto;
   height: auto;
+  display: flex;
+  flex-direction: column;
 }
 #task__wrapper .task__wrapper__head {
   background-color: lightgray;
@@ -95,15 +96,30 @@ header h1 {
   display: flex;
   justify-content: space-between;
   padding: 1%;
+  position: relative;
 }
 #task__wrapper .task__wrapper__head .task__wrapper__head__color {
-  background-color: #D11149;
   border-radius: 5px;
   width: 5vw;
   height: 5vw;
   position: absolute;
-  left: 15%;
-  top: 18%;
+  left: 5%;
+  top: 15%;
+}
+#task__wrapper .task__wrapper__head .Work {
+  background-color: #6610F2;
+}
+#task__wrapper .task__wrapper__head .Homework {
+  background-color: #F17105;
+}
+#task__wrapper .task__wrapper__head .Home {
+  background-color: #1A8FE3;
+}
+#task__wrapper .task__wrapper__head .Purchase {
+  background-color: #D11149;
+}
+#task__wrapper .task__wrapper__head .Sport {
+  background-color: #E6C229;
 }
 #task__wrapper .task__wrapper__head .task__wrapper__head__title__time {
   text-align: left;
@@ -126,8 +142,8 @@ header h1 {
   width: auto;
 }
 #task__wrapper .task__wrapper__head .task__wrapper__head__date__done .task__wrapper__head__done {
-  width: 5vw;
-  height: 5vw;
+  width: 35%;
+  height: 75%;
 }
 #task__wrapper .task__wrapper__description p {
   text-align: left;
