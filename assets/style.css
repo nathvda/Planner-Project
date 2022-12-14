@@ -12,6 +12,7 @@ body {
   background-color: #F1F1F1;
 }
 
+/* HEAD */
 header {
   padding: 1em;
   border-bottom: 1px solid #262626;
@@ -27,6 +28,7 @@ header h1 {
   width: 15rem;
 }
 
+/* FILTERS */
 #filter__button {
   position: absolute;
   bottom: 1rem;
@@ -78,66 +80,107 @@ header h1 {
 }
 
 #task__wrapper {
-  background-color: yellow;
   box-shadow: 0 0 5px 2px rgba(110, 110, 110, 0.75);
   border: 1px solid #262626;
+  border-radius: 5px;
   margin: auto;
   width: 80vw;
-  height: 60vw;
+  height: auto;
 }
 #task__wrapper .task__wrapper__head {
-  background-color: red;
+  background-color: lightgray;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding: 1%;
 }
 #task__wrapper .task__wrapper__head .task__wrapper__head__color {
   background-color: #D11149;
+  border-radius: 5px;
+  width: 5vw;
+  height: 5vw;
+  position: absolute;
+  left: 15%;
+  top: 18%;
 }
 #task__wrapper .task__wrapper__head .task__wrapper__head__title__time {
-  background-color: blue;
+  text-align: left;
+  padding-left: 15vw;
+}
+#task__wrapper .task__wrapper__head .task__wrapper__head__title__time .task__wrapper__head__title {
+  font-size: 1.5rem;
 }
 #task__wrapper .task__wrapper__head .task__wrapper__head__title__time .task__wrapper__head__time {
-  font-size: small;
+  font-size: 0.8rem;
 }
 #task__wrapper .task__wrapper__head .task__wrapper__head__date__done {
-  background-color: orangered;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 2vw;
 }
 #task__wrapper .task__wrapper__head .task__wrapper__head__date__done .task__wrapper__head__date {
-  background-color: green;
+  font-size: smaller;
+  width: auto;
 }
 #task__wrapper .task__wrapper__head .task__wrapper__head__date__done .task__wrapper__head__done {
-  width: 50px;
+  width: 5vw;
+  height: 5vw;
+}
+#task__wrapper .task__wrapper__description p {
+  text-align: left;
+  margin: 2% 0 0 2%;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
 }
 
 form {
   display: flex;
   flex-direction: column;
+}
+form #descripForm__button {
+  position: absolute;
+  bottom: 1rem;
+  right: 0rem;
+  height: 3rem;
+  width: 3rem;
+  background-image: linear-gradient(90deg, #E6C229, #D11149);
+  padding: 1em;
+  border: none;
+  border-radius: 100%;
+  color: #F1F1F1;
+}
+form #descripForm {
+  display: flex;
+  flex-direction: column;
   font-family: "Inter";
 }
-form label {
+form #descripForm label {
   padding: 1rem;
   font-size: 0.8rem;
   font-weight: bolder;
 }
-form input[type=text] {
+form #descripForm input[type=text] {
   font-size: 0.8rem;
   margin: 0rem 1rem 0rem 1rem;
   padding: 0.5rem;
   border: none;
 }
-form input[type=date] {
+form #descripForm input[type=date] {
   padding: 0.5rem;
   margin: 0rem 1rem 0rem 1rem;
   border-radius: 0.3rem;
   border: none;
 }
-form select {
+form #descripForm select {
   padding: 0.5rem;
   margin: 0rem 1rem 0rem 1rem;
   border-radius: 0.3rem;
   border: none;
 }
-form select option {
+form #descripForm select option {
   background-color: #262626;
   color: #F1F1F1;
 }
@@ -154,5 +197,18 @@ form select option {
   }
   #filters form {
     flex-direction: row;
+  }
+  #descripForm__button {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    right: 2rem;
+  }
+  #descripForm {
+    width: 40%;
+    padding: 2rem;
+    border: none;
+    box-shadow: 0.8rem 0.5rem 2rem rgba(110, 110, 110, 0.5);
+    border-radius: 5%;
   }
 }/*# sourceMappingURL=style.css.map */

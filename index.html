@@ -22,7 +22,7 @@
         <article id="filters">
             <div class="filters__title">Sort by:</div> 
             <form name="tasks">
-
+              
                 <input name="tasks" id="remainingTime" type="radio" value="remainingTime"/>
                 <label for="remainingTime">Remaining time</label>
                 <input name="tasks" id="taskName" type="radio" value="taskName"/>
@@ -64,11 +64,12 @@
                 </p>
             </div>
             
-        </div>
-
         </article>
 
         <!--FORM-->
+        <button aria-label="addButton" id="descripForm__button">
+            <img src="./assets/svg/plus-circle.svg">
+        </button>
         <form id ="descripForm" name="descriptionForm">
             <label for="dtaskName">Task name</label>
             <input  name="dtaskN" id="dtaskName"type="text" placeholder="Task name" required/>
