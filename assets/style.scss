@@ -134,13 +134,45 @@ header{
 
 
 
-
-
 // TASKS
 
 
 // FORM
+form{
+    display:flex;
+    flex-direction: column;
+    font-family: $main;
 
+    label{
+    padding:1rem;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    }
+
+    input[type="text"]{
+        font-size: 0.8rem;
+        margin: 0rem 1rem 0rem 1rem;
+        padding:0.5rem;
+        border: none;
+    }
+
+    input[type="date"]{
+        padding: 0.5rem;
+        margin: 0rem 1rem 0rem 1rem;
+        border-radius:0.3rem;
+        border: none;
+    }
+    select{
+        padding: 0.5rem;
+        margin: 0rem 1rem 0rem 1rem;
+        border-radius:0.3rem;
+        border: none;
+        option{
+            background-color: $black;
+            color: $white;
+        }
+    }
+}
 
 @media screen and (min-width:768px){
 
