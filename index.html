@@ -99,26 +99,26 @@
 
         <!-- Tâches -->
 
-        <div class="task__wrapper__head"  id="task__wrapper__head">
+            <div class="task__wrapper__head"  id="task__wrapper__head">
 
-            <div class="task__wrapper__head__color" id="task__wrapper__head__color">
-            </div>
+                <div class="task__wrapper__head__color Work Homework Home Purchase Sport" id="task__wrapper__head__color">
+                </div>
 
-            <div class="task__wrapper__head__title__time" id="task__wrapper__head__title__time">
-                <p class="task__wrapper__head__title"  id="task__warpper__head__title">
-                    Task 1
-                </p>  
-                <p class="task__wrapper__head__time" id="task__wrapper__head__time">
-                    In five day
-                </p>
-            </div>
-
-            <div class="task__wrapper__head__date__done" id="task__wrapper__head__date__done">
-                <p class="task__wrapper__head__date" id="task__wrapper__head__date">
-                    Mon 14th dec 
-                </p> 
-                <button class="task__wrapper__head__done" id="task__wrapper__head__done">
-                </button>
+                <div class="task__wrapper__head__title__time" id="task__wrapper__head__title__time">
+                    <p class="task__wrapper__head__title"  id="task__warpper__head__title">
+                        Task 1
+                    </p>  
+                    <p class="task__wrapper__head__time" id="task__wrapper__head__time">
+                        In five day
+                    </p>
+                </div>
+                <div class="task__wrapper__head__date__done" id="task__wrapper__head__date__done">
+                    <p class="task__wrapper__head__date" id="task__wrapper__head__date">
+                        Mon 14th dec 
+                    </p> 
+                    <button class="task__wrapper__head__done ToDo Doing Done" id="task__wrapper__head__done">
+                    </button>
+                </div>
             </div>
 
             <div class="task__wrapper__description" id="task__wrapper_description">
@@ -127,14 +127,40 @@
                 </p>
             </div>
             
-
-</body>
-</html>
         </div>
 
         </article>
 
         <!--FORM-->
+        <form name="descriptionForm">
+            <label for="dtaskName">Task name</label>
+            <input  name="dtaskN" id="dtaskName"type=" text" placeholder="Task name" required/>
+
+            <label for="dText">Description</label>
+            <input name="dtaskT" id="dText" type="text" placeholder="Description" required/>
+
+            <label for="dtaskDate">Date</label>
+            <input type="date" id="dtaskDate" value="2022-12-14" />
+
+            <label for="dtaskSelect">Select your task</label>
+            <select name="select" id="dtaskSelect" required>
+                <option value="" disabled selected hidden>Choose</option>
+                <option value="Homework">Do my homework</option>
+                <option value="Work">Advance in my work</option>
+                <option value="Home">Taking care of the house</option>
+                <option value="Purchase">Shopping</option>
+                <option value="Sport">Do my sport</option>
+            </select>
+
+            <label for="dtaskSelectStatut">Advancement</label>
+            <select name="selectStatut" id="dtaskSelectStatut" required>
+                <option value="" disabled selected hidden>Choose</option>
+                <option value="to do">To do</option>
+                <option value="Doing">Doing</option>
+                <option value="Done">Done</option>
+                <button aria-label="buttonForm" id="descriptionForm__button">Submit</button>
+            </select>
+        </form>
     </main>
 
 </body>
