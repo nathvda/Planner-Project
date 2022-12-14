@@ -102,6 +102,8 @@ header{
 
 }
 
+
+// TASKS
 #task__wrapper{
     box-shadow: 0 0 5px 2px rgba(110,110,110,0.75);
     border: 1px solid #262626;
@@ -161,9 +163,30 @@ header{
     }
 }
 
+
+
+// FORM
 form{
     display:flex;
     flex-direction: column;
+
+#descripForm__button{
+    position:absolute;
+    bottom:1rem;
+    right: 0rem;  
+    height: 3rem;
+    width:3rem;
+    background-image:linear-gradient(90deg, $yellow, $fuschia);
+    padding:1em;
+    border:none;
+    border-radius:100%;
+    color:$white;
+}
+#descripForm{
+    display:flex;
+    flex-direction: column;
+    //position:absolute;
+    //visibility:hidden;
     font-family: $main;
 
     label{
@@ -195,7 +218,8 @@ form{
             color: $white;
         }
     }
-}
+
+}}
 
 @media screen and (min-width:768px){
 
@@ -213,6 +237,21 @@ form{
         form{
             flex-direction: row;
         }
+    }
+
+    //FORM
+    #descripForm__button{
+      display: flex;
+      justify-content: flex-end;
+      position:fixed;
+      right: 2rem;
+    }
+    #descripForm{
+    width:40%;
+    padding: 2rem;
+    border: none;
+    box-shadow: 0.8rem 0.5rem 2rem  rgba(110,110,110,0.5);
+    border-radius: 5%;
     }
 
 }
