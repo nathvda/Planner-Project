@@ -7,12 +7,27 @@
     <meta name="theme-color" content="">
     <link rel="stylesheet" href="./assets/style.css">
     <script style src="main.js"></script>
-    <title>CheckIt</title>
+    <title>CHECKit</title>
 </head>
 <body>
 
     <main>
         <!--HAUT-->
+        <header>
+            <h1>CHECKit</h1>
+        </header>
+        <button aria-label="filters">
+            <img src="./assets/svg/sort-down-alt.svg">
+        </button>
+        <article id="filters">
+            <span class="filters__title">Sort by:</span> 
+            <form name="tasks">
+                <label for="remainingTime"></label>
+                <input name="tasks" id="remainingTime" type="radio" value="remainingTime"/>
+                <label for="taskName"></label>
+                <input name="tasks" id="taskName" type="radio" value="taskName"/>
+            </form>
+        </article>
 
         <!--FILTRES-->
 
@@ -52,10 +67,8 @@
 
         </article>
 
-       
-
         <!--FORM-->
     </main>
-    
+
 </body>
 </html>
