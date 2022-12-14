@@ -48,7 +48,9 @@ console.log(trying);
 
 // Open menus
 function showBox(iden){
+    
     document.getElementById(`${iden}`).classList.toggle('showFilters');
+
 }
 
 // 
