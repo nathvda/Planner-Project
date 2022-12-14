@@ -118,6 +118,7 @@ header h1 {
 }
 #task__wrapper .task__wrapper__head .task__wrapper__head__color {
   background-color: #D11149;
+  width: 10vw;
 }
 #task__wrapper .task__wrapper__head .task__wrapper__head__title__time {
   background-color: blue;
