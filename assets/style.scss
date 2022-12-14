@@ -25,7 +25,7 @@ body{
 }
 
 
-/* HEAD */
+// HEAD
 
 header{
     padding:1em;
@@ -44,12 +44,12 @@ header{
 }
 
 
-/* FILTERS */
+// FILTERS
 
 #filter__button{
     position:absolute;
     bottom:1rem;
-    right: 5rem;
+    right: 3rem;  
     height: 3rem;
     width:3rem;
     background-image:linear-gradient(90deg, $yellow, $fuschia);
@@ -96,14 +96,47 @@ header{
     }
 }
 
-#filters.showFilters{
-   
+#filter__button:focus + #filters{
+    position:absolute;
     visibility:visible;
+    background:white;
+    left:1rem;
+    right:1rem;
+    bottom:5rem;
+    padding:1rem;
+    border-radius:1rem;
 
+    .filters__title{
+        font-weight:bold;
+        text-transform:uppercase;
+        letter-spacing:0.05rem;   
+        margin-bottom:1rem;
+    }
+
+    form{
+        display:flex;
+        flex-direction: column;
+
+        label{
+            padding:1rem;}
+
+        input[type="radio"]{
+            display:none;
+        }
+
+        input[type="radio"]:checked + label{
+            background-color:$white;
+            color:$black;
+            font-weight:bolder;
+            border-radius:1rem;
+        }
+    }
 }
 
 
+
 // TASKS
+
 #task__wrapper{
     box-shadow: 0 0 5px 2px rgba(110,110,110,0.75);
     border: 1px solid #262626;
@@ -127,14 +160,12 @@ header{
             left: 15%;
             top: 18%;
         }
-
         .task__wrapper__head__title__time{
             text-align: left;
             padding-left: 15vw;
             .task__wrapper__head__title{
                 font-size: 1.5rem;
             }
-
             .task__wrapper__head__time{
                 font-size: 0.8rem;
             }
@@ -164,12 +195,7 @@ header{
 }
 
 
-
 // FORM
-form{
-    display:flex;
-    flex-direction: column;
-
 #descripForm__button{
     position:absolute;
     bottom:1rem;
@@ -185,30 +211,37 @@ form{
 #descripForm{
     display:flex;
     flex-direction: column;
-    //position:absolute;
-    //visibility:hidden;
+    position:absolute;
+    visibility:hidden;
     font-family: $main;
+    width: 40%;
+    box-shadow: 0.8rem 0.5rem 2rem  rgba(110,110,110,0.5);
+    border-radius: 5%;
+    margin: 5% 30% 5% 30%;
+    padding: 0.7rem;
 
     label{
-    padding:1rem;
+    padding:0.5rem;
     font-size: 0.8rem;
     font-weight: bolder;
     }
 
     input[type="text"]{
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         margin: 0rem 1rem 0rem 1rem;
         padding:0.5rem;
         border: none;
     }
 
     input[type="date"]{
+        font-size: 0.7rem;
         padding: 0.5rem;
         margin: 0rem 1rem 0rem 1rem;
         border-radius:0.3rem;
         border: none;
     }
     select{
+        font-size: 0.7rem;
         padding: 0.5rem;
         margin: 0rem 1rem 0rem 1rem;
         border-radius:0.3rem;
@@ -218,8 +251,8 @@ form{
             color: $white;
         }
     }
+}
 
-}}
 
 @media screen and (min-width:768px){
 
@@ -242,16 +275,17 @@ form{
     //FORM
     #descripForm__button{
       display: flex;
+
       justify-content: flex-end;
       position:fixed;
       right: 2rem;
     }
     #descripForm{
-    width:40%;
-    padding: 2rem;
-    border: none;
-    box-shadow: 0.8rem 0.5rem 2rem  rgba(110,110,110,0.5);
-    border-radius: 5%;
+        display: flex;
+        justify-content: flex-end;
+        margin: 5% 30% 1% 30%;
+        width:40%;
+        padding: 2rem;
     }
 
 }
