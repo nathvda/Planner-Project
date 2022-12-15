@@ -7,9 +7,9 @@ import { NewTask } from "./modules/Class.js";
 let trying = new NewTask("jardinage", "manger du chocolat", "2022-12-13", "dormir");
 console.log(trying);
 
-// DisplayingTask
-
 // AddingTask
+
+// DisplayingTask
 
 // ChangingStatus
 
@@ -44,4 +44,5 @@ window.localStorage.setItem("Tasks", JSON.stringify(TASKS));
 let currentTasks = localStorage.getItem("Tasks");
     
 remainingTime();
+
 // DisplayRemainingTime
