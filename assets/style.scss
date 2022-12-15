@@ -179,7 +179,6 @@ header{
 }
 
 
-
 /* FORM */ 
 #descripForm__button{
     position:absolute;
@@ -199,11 +198,11 @@ header{
     display:flex;
     flex-direction: column;
     position:absolute;
-    //visibility:hidden;
-    background-color:$white;
+    visibility:hidden;
     font-family: $main;
+    background-color:$white;
     box-shadow: 0.8rem 0.5rem 2rem  rgba(110,110,110,0.5);
-    border-radius: 5%;
+    border-radius: 2vh;
     top:1rem;
     left: 1rem;
     right:1rem;
@@ -244,7 +243,9 @@ header{
         }
     }
 }
-
+#descripForm.showFilters{
+    visibility:visible;
+}
 
 @media screen and (min-width:768px){
 
@@ -275,6 +276,7 @@ header{
     #descripForm{
         display: flex;
         justify-content: center;
+        top:initial;
         left:8rem;
         right:8rem;
         bottom:5rem;
