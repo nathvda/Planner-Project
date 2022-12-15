@@ -7,10 +7,10 @@ export function sortBy(){
     console.log(alpha);
     
     if (alpha == "remainingTime"){
-    const SORTEDOBJECT = Tasks.sort((a,b) => a.remainingTime - b.remainingTime);
+    const SORTEDOBJECT = TASKS.sort((a,b) => a.remainingTime - b.remainingTime);
     console.log(SORTEDOBJECT);
     } else if (alpha == "taskName"){
-    const SORTEDOBJECT = Tasks.sort((a,b) => a.name > b.name);
+    const SORTEDOBJECT = TASKS.sort((a,b) => a.name > b.name);
     console.log(SORTEDOBJECT);
     }}
     
