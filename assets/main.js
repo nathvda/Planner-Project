@@ -9,10 +9,7 @@ console.log(trying);
 
 // AddingTask
 
-// DisplayingTask
-
-// AddingTask
-
+<<<<<<< HEAD
 function getInfo () {
     let nameTask = document.getElementById("dtaskName").value;
     console.log(nameTask)
@@ -31,7 +28,7 @@ function getInfo () {
     let selectOption2 = document.getElementById("dtaskSelectStatut").querySelectorAll("option");
     let valueOption2 = selectOption2[select2].value
 
-    let task = new NewTask (nameTask, descriptionTask, dateTask, valueOption1, valueOption2)
+    let task = new NewTask (nameTask, descriptionTask, dateTask, valueOption1, valueOption2);
     console.log(task)
 
 }
@@ -42,6 +39,9 @@ subButton.addEventListener('click', getInfo);
 
 
 
+=======
+// DisplayingTask
+>>>>>>> 2c076c7ba16b88b1e2f54d252734cadd63cbb2d7
 
 // ChangingStatus
 
