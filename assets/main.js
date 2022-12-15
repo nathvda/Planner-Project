@@ -217,3 +217,15 @@ window.addEventListener("load", loadObject);
 remainingTime();
 
 // DisplayRemainingTime
+
+
+//Display number of task
+
+function displayCurrentTasks(){
+
+
+    let curTask = document.getElementById("currentTasks");
+    console.log(TASKS.length);
+
+}
+displayCurrentTasks();
