@@ -68,6 +68,7 @@ function AddingTask(){
 }
 AddingTask()
 
+
 function getInfo () {
     let nameTask = document.getElementById("dtaskName").value;
     console.log(nameTask);
@@ -91,11 +92,8 @@ function getInfo () {
 
 }
 
-
 let subButton = document.getElementById("descriptionForm__button");
 subButton.addEventListener('click', getInfo);
-
-
 
 
 // DisplayingTask
