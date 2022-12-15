@@ -90,6 +90,8 @@ function getInfo () {
     let task = new NewTask (nameTask, descriptionTask, dateTask, valueOption1, valueOption2);
     console.log(task);
 
+    saveObject();
+
 }
 
 let subButton = document.getElementById("descriptionForm__button");
@@ -135,8 +137,15 @@ filtersButton.addEventListener('click', () => {
 
 // LocalStorageSaving
 
+function saveObject(){
 window.localStorage.setItem("Tasks", JSON.stringify(TASKS));
-let currentTasks = localStorage.getItem("Tasks");
+
+}
+
+function loadObject(){
+TASKS = window.localStorage.getItem("Tasks");
+
+}
     
 remainingTime();
 
