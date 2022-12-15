@@ -9,7 +9,7 @@ export class NewTask {
         this.date = date,
         this.delay = checkDelay(date),
         this.remainingTime = remainingTime(this.delay),
-        this.type = type
+        this.type = type,
         this.status = status
     }
 }
