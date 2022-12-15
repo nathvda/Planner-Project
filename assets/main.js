@@ -223,9 +223,6 @@ remainingTime();
 
 function displayCurrentTasks(){
 
-
-    let curTask = document.getElementById("currentTasks");
-    console.log(TASKS.length);
-
+document.getElementById("currentTasks").innerHTML = TASKS.length;
 }
 displayCurrentTasks();
