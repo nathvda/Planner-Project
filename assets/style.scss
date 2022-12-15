@@ -305,4 +305,11 @@ header{
         width:40%;
         padding: 2rem;
     }
+    /*Task*/
+    .task__wrapper{
+        width: 50vw;
+        height: max-content;
+        display: flex;
+        flex-wrap: wrap;
+    }
 }

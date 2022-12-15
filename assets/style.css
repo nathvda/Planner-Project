@@ -259,4 +259,13 @@ header h1 {
     width: 40%;
     padding: 2rem;
   }
+  /*Task*/
+  .task__wrapper {
+    width: 50vw;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }/*# sourceMappingURL=style.css.map */
