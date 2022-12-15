@@ -31,7 +31,6 @@ function getInfo () {
     let task = new NewTask (nameTask, descriptionTask, dateTask, valueOption1, valueOption2);
     console.log(task);
 
-
     console.log(Tasks.push(task));
 
 }
