@@ -9,27 +9,27 @@ console.log(trying);
 
 // AddingTask
 
-<<<<<<< HEAD
+
 function getInfo () {
     let nameTask = document.getElementById("dtaskName").value;
-    console.log(nameTask)
+    console.log(nameTask);
     let descriptionTask = document.getElementById("dText").value;
-    console.log(descriptionTask)
+    console.log(descriptionTask);
     let dateTask = document.getElementById("dtaskDate").value;
-    console.log(dateTask)
+    console.log(dateTask);
 
     let select1 = document.getElementById("dtaskSelect").selectedIndex;
-    console.log(select1)
+    console.log(select1);
     let selectOption1 = document.getElementById("dtaskSelect").querySelectorAll("option");
-    let valueOption1 = selectOption1[select1].value
+    let valueOption1 = selectOption1[select1].value;
 
     let select2 = document.getElementById("dtaskSelectStatut").selectedIndex;
-    console.log(select2)
+    console.log(select2);
     let selectOption2 = document.getElementById("dtaskSelectStatut").querySelectorAll("option");
-    let valueOption2 = selectOption2[select2].value
+    let valueOption2 = selectOption2[select2].value;
 
     let task = new NewTask (nameTask, descriptionTask, dateTask, valueOption1, valueOption2);
-    console.log(task)
+    console.log(task);
 
 }
 
@@ -39,9 +39,9 @@ subButton.addEventListener('click', getInfo);
 
 
 
-=======
+
 // DisplayingTask
->>>>>>> 2c076c7ba16b88b1e2f54d252734cadd63cbb2d7
+
 
 // ChangingStatus
 
@@ -67,7 +67,7 @@ filtersButton.addEventListener('click', () => {
  let formButton = document.getElementById("descripForm__button");
 
  formButton.addEventListener('click', () => {
-    showBox("descripForm")
+    showBox("descripForm");
  })
 
 // LocalStorageSaving
