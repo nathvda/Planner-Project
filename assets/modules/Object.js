@@ -1,1 +1,1 @@
-export let Tasks = [];
+export const TASKS = [];
