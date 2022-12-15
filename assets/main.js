@@ -1,11 +1,12 @@
 import { remainingTime, checkDelay } from "./modules/Calculations.js";
 import { sortBy } from "./modules/Sorting.js";
-import { TASKS } from "./modules/Object.js";
 import { NewTask } from "./modules/Class.js";
 
 // Creating new Object
 let trying = new NewTask("jardinage", "manger du chocolat", "2022-12-13", "dormir");
 console.log(trying);
+
+export let TASKS = [];
 
 // AddingTask
 function AddingTask(){
@@ -68,7 +69,6 @@ function AddingTask(){
 }
 AddingTask()
 
-
 function getInfo () {
     let nameTask = document.getElementById("dtaskName").value;
     console.log(nameTask);
@@ -92,8 +92,10 @@ function getInfo () {
 
     TASKS.push(task);
     console.log(TASKS);
-    
+
     saveObject();
+
+    return TASKS
 
 }
 
@@ -142,13 +144,15 @@ filtersButton.addEventListener('click', () => {
 
 function saveObject(){
 window.localStorage.setItem("Tasks", JSON.stringify(TASKS));
-
 }
 
 function loadObject(){
-TASKS = window.localStorage.getItem("Tasks");
 
+let loadObject = window.localStorage.getItem("Tasks");
+TASKS = JSON.parse(loadObject);
 }
+
+window.addEventListener('load', loadObject)
     
 remainingTime();
 

@@ -1,4 +1,4 @@
-import { TASKS } from "./Object.js";
+import { TASKS } from "../main.js";
 
 // Sorting
 export function sortBy(){
