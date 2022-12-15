@@ -8,7 +8,65 @@ let trying = new NewTask("jardinage", "manger du chocolat", "2022-12-13", "dormi
 console.log(trying);
 
 // AddingTask
+function AddingTask(){
 
+   let wrapper=document.getElementById('task__wrapper');
+
+   let box= document.createElement('div');
+   box.setAttribute('id','task__wrapper__box');
+   box.classList.add("task__wrapper__box");
+
+   let task_head= document.createElement('div');
+   task_head.setAttribute('id','task__wrapper__head');
+   task_head.classList.add("task__wrapper__head");
+
+   let head_color= document.createElement('div');
+   head_color.setAttribute('id','task__wrapper__head__color');
+   head_color.classList.add("task__wrapper__head__color", "Work", "Homework", "Home", "Purchase", "Sport");
+
+   let title_time= document.createElement('div');
+   title_time.setAttribute('id','task__wrapper__head__title__time');
+   title_time.classList.add("task__wrapper__head__title__time");
+
+   let p_title= document.createElement('p');
+   p_title.setAttribute('id','task__wrapper__head__title');
+   p_title.classList.add("task__wrapper__head__title");
+
+   let p_time= document.createElement('p');
+   p_time.setAttribute('id','task__wrapper__head__time');
+   p_time.classList.add("task__wrapper__head__time");
+
+   let date_done= document.createElement('div');
+   date_done.setAttribute('id','task__wrapper__head__date__done');
+   date_done.classList.add("task__wrapper__head__date__done");
+
+   let p_date= document.createElement('p');
+   p_date.setAttribute('id','task__wrapper__head__date');
+   p_date.classList.add("task__wrapper__head__date");
+
+   let b_done= document.createElement('button');
+   b_done.setAttribute('id','task__wrapper__head__done');
+   b_done.classList.add("task__wrapper__head__done", "ToDo", "Doing", "Done");
+
+   let task_desc= document.createElement('div');
+   task_desc.setAttribute('id','task__wrapper__description');
+   task_desc.classList.add("task__wrapper__description");
+
+   let p_desc=document.createElement('p');
+
+   wrapper.appendChild(box);
+   box.appendChild(task_head);
+   box.appendChild(task_desc)
+   task_head.appendChild(head_color);
+   task_head.appendChild(title_time);
+   task_head.appendChild(date_done);
+   title_time.appendChild(p_title);
+   title_time.appendChild(p_time);
+   date_done.appendChild(p_date);
+   date_done.appendChild(b_done);
+   task_desc.appendChild(p_desc);
+}
+AddingTask()
 
 function getInfo () {
     let nameTask = document.getElementById("dtaskName").value;
