@@ -46,7 +46,7 @@ export let TASKS = [
    delay: -224935422,
    remainingTime: "3d ago",
    type: "dormir",
-   status: "doing",
+   status: "Doing",
  },
 ];
 
