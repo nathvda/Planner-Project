@@ -283,10 +283,27 @@ header{
         padding: 2rem;
     }
     /*Task*/
-    .task__wrapper{
-        width: 50vw;
+    #task__wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        #task__wrapper__box{
+        width: 33%;
         height: max-content;
         display: flex;
         flex-wrap: wrap;
+        }
+        .task__wrapper__head{
+            .task__wrapper__head__color{
+                width: 6%;
+                height: 55%;
+                left: 5%;
+                top: 15%;
+            }
+            .task__wrapper__head__title__time{
+                text-align: left;
+                padding-left: 8vw;
+            }
+        }
     }
 }
