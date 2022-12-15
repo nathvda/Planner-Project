@@ -115,8 +115,14 @@ function AddingTask() {
   date_done.appendChild(b_done);
   task_desc.appendChild(p_desc);
 }
-AddingTask();
 
+function CreatingTask(){
+   for(let elem of TASKS){
+      elem["name"];
+      console.log(elem["name"]);
+   }
+}
+CreatingTask()
 function getInfo() {
   let nameTask = document.getElementById("dtaskName").value;
   console.log(nameTask);
@@ -163,10 +169,12 @@ subButton.addEventListener("click", getInfo);
 
 // ChangingStatus
 
-let buttonTodo = document.getElementById("task__wrapper__head__done");
-buttonTodo.addEventListener("click", () => {
-  console.log("À remplir ici");
-});
+// let buttonTodo = document.getElementById("task__wrapper__head__done");
+// buttonTodo.addEventListener('click', () => {
+   
+//    console.log("À remplir ici");
+
+// })
 
 // sorting stuff
 let sorting = document.getElementsByName("tasks")[0];
