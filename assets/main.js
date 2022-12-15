@@ -29,7 +29,7 @@ function getInfo () {
     let selectOption2 = document.getElementById("dtaskSelectStatut").querySelectorAll("option");
     let valueOption2 = selectOption2[select2].value
 
-    let task = new NewTask (nameTask, descriptionTask, dateTask, valueOption1)
+    let task = new NewTask (nameTask, descriptionTask, dateTask, valueOption1, valueOption2)
     console.log(task)
 
 }
