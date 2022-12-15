@@ -1,6 +1,6 @@
 import { remainingTime, checkDelay } from "./modules/Calculations.js";
 import { sortBy } from "./modules/Sorting.js";
-import { TASKS } from "./modules/Object.js";
+import { Tasks } from "./modules/Object.js";
 import { NewTask } from "./modules/Class.js";
 
 // Creating new Object
@@ -12,6 +12,13 @@ console.log(trying);
 // DisplayingTask
 
 // ChangingStatus
+
+let buttonTodo = document.getElementById("task__wrapper__head__done");
+buttonTodo.addEventListener('click', () => {
+   
+   console.log("À remplir ici");
+
+})
 
 // sorting stuff
 let sorting = document.getElementsByName("tasks")[0];
@@ -40,7 +47,7 @@ filtersButton.addEventListener('click', () => {
 
 // LocalStorageSaving
 
-window.localStorage.setItem("Tasks", JSON.stringify(TASKS));
+window.localStorage.setItem("Tasks", JSON.stringify(Tasks));
 let currentTasks = localStorage.getItem("Tasks");
     
 remainingTime();
