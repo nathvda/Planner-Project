@@ -30,6 +30,13 @@ filtersButton.addEventListener('click', () => {
     showBox("filters");
  });
 
+ /* DISPLAYS FORM FOR MOBILE */
+ 
+ let formButton = document.getElementById("descripForm__button");
+
+ formButton.addEventListener('click', () => {
+    showBox("descripForm")
+ })
 
 // LocalStorageSaving
 

@@ -196,6 +196,8 @@ header h1 {
 #descripForm {
   display: flex;
   flex-direction: column;
+  position: absolute;
+  visibility: hidden;
   font-family: "Inter";
   width: 40%;
   box-shadow: 0.8rem 0.5rem 2rem rgba(110, 110, 110, 0.5);
@@ -231,6 +233,10 @@ header h1 {
 #descripForm select option {
   background-color: #262626;
   color: #F1F1F1;
+}
+
+#descripForm.showFilters {
+  visibility: visible;
 }
 
 @media screen and (min-width: 768px) {
