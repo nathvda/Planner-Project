@@ -1,6 +1,6 @@
 import { remainingTime, checkDelay } from "./modules/Calculations.js";
 import { sortBy } from "./modules/Sorting.js";
-import { TASKS } from "./modules/Object.js";
+import { Tasks } from "./modules/Object.js";
 import { NewTask } from "./modules/Class.js";
 
 // Creating new Object
@@ -53,9 +53,48 @@ b_done.classList.add("task__wrapper__head__done", "ToDo", "Doing", "Done");
 
 
 
+
+function getInfo () {
+    let nameTask = document.getElementById("dtaskName").value;
+    console.log(nameTask);
+    let descriptionTask = document.getElementById("dText").value;
+    console.log(descriptionTask);
+    let dateTask = document.getElementById("dtaskDate").value;
+    console.log(dateTask);
+
+    let select1 = document.getElementById("dtaskSelect").selectedIndex;
+    console.log(select1);
+    let selectOption1 = document.getElementById("dtaskSelect").querySelectorAll("option");
+    let valueOption1 = selectOption1[select1].value;
+
+    let select2 = document.getElementById("dtaskSelectStatut").selectedIndex;
+    console.log(select2);
+    let selectOption2 = document.getElementById("dtaskSelectStatut").querySelectorAll("option");
+    let valueOption2 = selectOption2[select2].value;
+
+    let task = new NewTask (nameTask, descriptionTask, dateTask, valueOption1, valueOption2);
+    console.log(task);
+
+}
+
+
+let subButton = document.getElementById("descriptionForm__button");
+subButton.addEventListener('click', getInfo);
+
+
+
+
 // DisplayingTask
 
+
 // ChangingStatus
+
+let buttonTodo = document.getElementById("task__wrapper__head__done");
+buttonTodo.addEventListener('click', () => {
+   
+   console.log("À remplir ici");
+
+})
 
 // sorting stuff
 let sorting = document.getElementsByName("tasks")[0];
@@ -79,12 +118,12 @@ filtersButton.addEventListener('click', () => {
  let formButton = document.getElementById("descripForm__button");
 
  formButton.addEventListener('click', () => {
-    showBox("descripForm")
+    showBox("descripForm");
  })
 
 // LocalStorageSaving
 
-window.localStorage.setItem("Tasks", JSON.stringify(TASKS));
+window.localStorage.setItem("Tasks", JSON.stringify(Tasks));
 let currentTasks = localStorage.getItem("Tasks");
     
 remainingTime();
