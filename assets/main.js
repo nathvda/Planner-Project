@@ -27,7 +27,7 @@ export let TASKS = [
    date: "2022-12-13",
    delay: -224935422,
    remainingTime: "3d ago",
-   type: "dormir",
+   type: "Homework",
    status: "Done",
  },
  {
@@ -51,7 +51,7 @@ export let TASKS = [
 ];
 
 // AddingTask
-function AddingTask() {
+function AddingTask(name, description, date, type, status, remainingTime) {
   let wrapper = document.getElementById("task__wrapper");
 
   let box = document.createElement("div");
@@ -66,11 +66,7 @@ function AddingTask() {
   head_color.setAttribute("id", "task__wrapper__head__color");
   head_color.classList.add(
     "task__wrapper__head__color",
-    "Work",
-    "Homework",
-    "Home",
-    "Purchase",
-    "Sport"
+    type
   );
 
   let title_time = document.createElement("div");
@@ -80,10 +76,14 @@ function AddingTask() {
   let p_title = document.createElement("p");
   p_title.setAttribute("id", "task__wrapper__head__title");
   p_title.classList.add("task__wrapper__head__title");
+  let p_titletexte=document.createTextNode(name);
+  p_title.appendChild(p_titletexte)
 
   let p_time = document.createElement("p");
   p_time.setAttribute("id", "task__wrapper__head__time");
   p_time.classList.add("task__wrapper__head__time");
+  let p_timetexte=document.createTextNode(remainingTime);
+  p_time.appendChild(p_timetexte);
 
   let date_done = document.createElement("div");
   date_done.setAttribute("id", "task__wrapper__head__date__done");
@@ -92,16 +92,23 @@ function AddingTask() {
   let p_date = document.createElement("p");
   p_date.setAttribute("id", "task__wrapper__head__date");
   p_date.classList.add("task__wrapper__head__date");
+  let p_datetime=document.createTextNode(date);
+  p_date.appendChild(p_datetime);
 
   let b_done = document.createElement("button");
   b_done.setAttribute("id", "task__wrapper__head__done");
-  b_done.classList.add("task__wrapper__head__done", "ToDo", "Doing", "Done");
+  b_done.classList.add(
+    "task__wrapper__head__done",
+    status
+   );
 
   let task_desc = document.createElement("div");
   task_desc.setAttribute("id", "task__wrapper__description");
   task_desc.classList.add("task__wrapper__description");
 
   let p_desc = document.createElement("p");
+  let p_desctexte=document.createTextNode(description);
+  p_desc.appendChild(p_desctexte);
 
   wrapper.appendChild(box);
   box.appendChild(task_head);
@@ -114,14 +121,23 @@ function AddingTask() {
   date_done.appendChild(p_date);
   date_done.appendChild(b_done);
   task_desc.appendChild(p_desc);
+
 }
 
 function CreatingTask(){
    for(let elem of TASKS){
-      elem["name"];
-      console.log(elem["name"]);
+      let nom=elem["name"];
+      let descript=elem["description"];
+      let time=elem["date"];
+      let types=elem["type"];
+      let faire=elem["status"];
+      let reste=elem["remainingTime"];
+      AddingTask(nom, descript, time, types, faire, reste);
    }
 }
+
+
+
 CreatingTask()
 function getInfo() {
   let nameTask = document.getElementById("dtaskName").value;
