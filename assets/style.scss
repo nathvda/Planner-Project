@@ -49,7 +49,7 @@ header{
 #filter__button{
     position:fixed;
     bottom:1rem;
-    right: 3rem;  
+    right: 5rem;  
     height: 3rem;
     width:3rem;
     background-image:linear-gradient(90deg, $yellow, $fuschia);
@@ -57,10 +57,11 @@ header{
     border:none;
     border-radius:100%;
     color:white;
+    z-index:99;
 }
 
 #filters{
-    position:absolute;
+    position:fixed;
     visibility:hidden;
     background:white;
     left:1rem;
@@ -68,6 +69,7 @@ header{
     bottom:5rem;
     padding:1rem;
     border-radius:1rem;
+    z-index:99;
 
     .filters__title{
         font-weight:bold;
@@ -96,48 +98,14 @@ header{
     }
 }
 
-#filter__button:focus + #filters{
-    position:absolute;
+#filters.showFilters{
     visibility:visible;
-    background:white;
-    left:1rem;
-    right:1rem;
-    bottom:5rem;
-    padding:1rem;
-    border-radius:1rem;
-
-    .filters__title{
-        font-weight:bold;
-        text-transform:uppercase;
-        letter-spacing:0.05rem;   
-        margin-bottom:1rem;
-    }
-
-    form{
-        display:flex;
-        flex-direction: column;
-
-        label{
-            padding:1rem;}
-
-        input[type="radio"]{
-            display:none;
-        }
-
-        input[type="radio"]:checked + label{
-            background-color:$white;
-            color:$black;
-            font-weight:bolder;
-            border-radius:1rem;
-        }
-    }
 }
 
 
 
 // TASKS
-
-#task__wrapper{
+#task__wrapper__box{
     box-shadow: 0.8rem 0.5rem 2rem  rgba(110,110,110,0.5);
     border-radius: 5px;
     margin: 5vw;
@@ -211,12 +179,11 @@ header{
 }
 
 
-
 /* FORM */ 
 #descripForm__button{
-    position:absolute;
+    position:fixed;
     bottom:1rem;
-    right: 0rem;  
+    right: 1rem;  
     height: 3rem;
     width:3rem;
     background-image:linear-gradient(90deg, $yellow, $fuschia);
@@ -233,10 +200,14 @@ header{
     position:absolute;
     visibility:hidden;
     font-family: $main;
-    width: 40%;
+    background-color:$white;
     box-shadow: 0.8rem 0.5rem 2rem  rgba(110,110,110,0.5);
-    border-radius: 5%;
-    margin: 5% 30% 5% 30%;
+    border-radius: 2vh;
+    top:1rem;
+    left: 1rem;
+    right:1rem;
+    bottom:5rem;
+    z-index:99;
     padding: 0.7rem;
 
     label{
@@ -265,6 +236,7 @@ header{
         margin: 0rem 1rem 0rem 1rem;
         border-radius:0.3rem;
         border: none;
+
         option{
             background-color: $black;
             color: $white;
@@ -296,15 +268,42 @@ header{
     //FORM
     #descripForm__button{
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
       position:fixed;
       right: 2rem;
     }
+
     #descripForm{
         display: flex;
-        justify-content: flex-end;
-        margin: 5% 30% 1% 30%;
-        width:40%;
+        justify-content: center;
+        top:initial;
+        left:8rem;
+        right:8rem;
+        bottom:5rem;
         padding: 2rem;
+    }
+    /*Task*/
+    #task__wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        #task__wrapper__box{
+        width: 33%;
+        height: max-content;
+        display: flex;
+        flex-wrap: wrap;
+        }
+        .task__wrapper__head{
+            .task__wrapper__head__color{
+                width: 6%;
+                height: 55%;
+                left: 5%;
+                top: 15%;
+            }
+            .task__wrapper__head__title__time{
+                text-align: left;
+                padding-left: 8vw;
+            }
+        }
     }
 }
