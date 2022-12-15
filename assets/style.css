@@ -6,20 +6,50 @@
   list-style-type: none;
 }
 
+:root {
+  --yellow: $yellow;
+  --fuschia: $fuschia;
+  --blue: $blue;
+  --orange: $orange;
+  --purple: $purple;
+  --white: $white;
+  --black: $black;
+  --shadow-color: rgba(110,110,110,0.5);
+  --darker: lightgray;
+}
+
+:root.dark-mode {
+  --yellow: rgb(209, 209, 129);
+  --fuschia: rgb(235, 126, 126);
+  --blue: rgb(138, 138, 240);
+  --orange: rgb(145, 235, 145);
+  --purple: purple;
+  --white: #222222;
+  --black: #9b9b9b;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --darker: #0e0e0e;
+}
+:root.dark-mode p {
+  color: var(--black);
+}
+:root.dark-mode #filters {
+  color: var(--white);
+}
+
 body {
   font-family: "Inter";
   font-size: 1rem;
-  background-color: #F1F1F1;
+  background-color: var(--white);
 }
 
 header {
   padding: 1em;
-  border-bottom: 1px solid #262626;
+  border-bottom: 1px solid var(--black);
 }
 header h1 {
   font-family: "Bodoni Moda";
   color: transparent;
-  background-image: linear-gradient(90deg, #E6C229, #D11149, #1A8FE3, #F17105, #6610F2);
+  background-image: linear-gradient(90deg, var(--yellow), var(--fuschia), var(--blue), var(--orange), var(--purple));
   -webkit-background-clip: text;
           background-clip: text;
   font-weight: bolder;
@@ -33,18 +63,18 @@ header h1 {
   right: 5rem;
   height: 3rem;
   width: 3rem;
-  background-image: linear-gradient(90deg, #E6C229, #D11149);
+  background-image: linear-gradient(90deg, var(--yellow), var(--fuschia));
   padding: 1em;
   border: none;
   border-radius: 100%;
-  color: white;
+  color: var(--white);
   z-index: 99;
 }
 
 #filters {
   position: fixed;
   visibility: hidden;
-  background: white;
+  background: var(--white);
   left: 1rem;
   right: 1rem;
   bottom: 5rem;
@@ -69,8 +99,8 @@ header h1 {
   display: none;
 }
 #filters form input[type=radio]:checked + label {
-  background-color: #F1F1F1;
-  color: #262626;
+  background-color: var(--white);
+  color: var(--black);
   font-weight: bolder;
   border-radius: 1rem;
 }
@@ -80,7 +110,7 @@ header h1 {
 }
 
 #task__wrapper__box {
-  box-shadow: 0.8rem 0.5rem 2rem rgba(110, 110, 110, 0.5);
+  box-shadow: 0.8rem 0.5rem 2rem var(--shadow-color);
   border-radius: 5px;
   margin: 5vw;
   width: auto;
@@ -89,7 +119,7 @@ header h1 {
   flex-direction: column;
 }
 #task__wrapper__box .task__wrapper__head {
-  background-color: lightgray;
+  background-color: var(--darker);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   display: flex;
@@ -106,19 +136,19 @@ header h1 {
   top: 15%;
 }
 #task__wrapper__box .task__wrapper__head .Work {
-  background-color: #6610F2;
+  background-color: var(--purple);
 }
 #task__wrapper__box .task__wrapper__head .Homework {
-  background-color: #F17105;
+  background-color: var(--orange);
 }
 #task__wrapper__box .task__wrapper__head .Home {
-  background-color: #1A8FE3;
+  background-color: var(--blue);
 }
 #task__wrapper__box .task__wrapper__head .Purchase {
-  background-color: #D11149;
+  background-color: var(--fuschia);
 }
 #task__wrapper__box .task__wrapper__head .Sport {
-  background-color: #E6C229;
+  background-color: var(--yellow);
 }
 #task__wrapper__box .task__wrapper__head .task__wrapper__head__title__time {
   text-align: left;
@@ -159,11 +189,11 @@ header h1 {
   right: 1rem;
   height: 3rem;
   width: 3rem;
-  background-image: linear-gradient(90deg, #E6C229, #D11149);
+  background-image: linear-gradient(90deg, var(--yellow), var(--fuschia));
   padding: 1em;
   border: none;
   border-radius: 100%;
-  color: #F1F1F1;
+  color: var(--white);
 }
 
 #descripForm {
@@ -172,8 +202,8 @@ header h1 {
   position: absolute;
   visibility: hidden;
   font-family: "Inter";
-  background-color: #F1F1F1;
-  box-shadow: 0.8rem 0.5rem 2rem rgba(110, 110, 110, 0.5);
+  background-color: var(--white);
+  box-shadow: 0.8rem 0.5rem 2rem var(--shadow-color);
   border-radius: 2vh;
   top: 1rem;
   left: 1rem;
@@ -208,8 +238,8 @@ header h1 {
   border: none;
 }
 #descripForm select option {
-  background-color: #262626;
-  color: #F1F1F1;
+  background-color: var(--black);
+  color: var(--white);
 }
 
 #descripForm.showFilters {
@@ -224,7 +254,7 @@ header h1 {
     visibility: visible;
     position: static;
     border-radius: 0;
-    border-bottom: 1px solid #262626;
+    border-bottom: 1px solid var(--black);
   }
   #filters form {
     flex-direction: row;

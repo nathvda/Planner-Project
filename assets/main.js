@@ -1,6 +1,6 @@
 import { remainingTime, checkDelay } from "./modules/Calculations.js";
 import { sortBy } from "./modules/Sorting.js";
-import { Tasks } from "./modules/Object.js";
+import { TASKS } from "./modules/Object.js";
 import { NewTask } from "./modules/Class.js";
 
 // Creating new Object
@@ -8,6 +8,7 @@ let trying = new NewTask("jardinage", "manger du chocolat", "2022-12-13", "dormi
 console.log(trying);
 
 // AddingTask
+/*
 let main= document.getElementsByName('main');
 
 let wrapper= document.createElement('article');
@@ -50,7 +51,7 @@ let b_done= document.createElement('button');
 b_done.setAttribute('id','task__wrapper__head__done');
 b_done.classList.add("task__wrapper__head__done", "ToDo", "Doing", "Done");
 
-
+*/
 
 
 
@@ -73,7 +74,9 @@ function getInfo () {
     let valueOption2 = selectOption2[select2].value;
 
     let task = new NewTask (nameTask, descriptionTask, dateTask, valueOption1, valueOption2);
-    console.log(task);
+      
+   TASKS.push(task);
+   console.log(TASKS);
 
 }
 
@@ -123,7 +126,7 @@ filtersButton.addEventListener('click', () => {
 
 // LocalStorageSaving
 
-window.localStorage.setItem("Tasks", JSON.stringify(Tasks));
+window.localStorage.setItem("Tasks", JSON.stringify(TASKS));
 let currentTasks = localStorage.getItem("Tasks");
     
 remainingTime();
