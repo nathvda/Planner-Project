@@ -123,6 +123,8 @@ function CreatingTask(){
    }
 }
 CreatingTask()
+
+
 function getInfo() {
   let nameTask = document.getElementById("dtaskName").value;
   console.log(nameTask);
