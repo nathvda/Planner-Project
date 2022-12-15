@@ -46,7 +46,7 @@ export let TASKS = [
    delay: -224935422,
    remainingTime: "3d ago",
    type: "dormir",
-   status: "doing",
+   status: "Doing",
  },
 ];
 
@@ -139,6 +139,8 @@ function CreatingTask(){
 
 
 CreatingTask()
+
+
 function getInfo() {
   let nameTask = document.getElementById("dtaskName").value;
   console.log(nameTask);
