@@ -220,9 +220,11 @@ header{
             display: flex;
             flex-direction: column;
             position:relative;
+            min-height:3rem;
 
         .task__wrapper__description__delete{
             text-align: right;
+
             .task__wrapper__description__delete__button{
                 width: 3vw;
                 height: 3vw;
@@ -233,7 +235,7 @@ header{
                 border: none; 
                 position:absolute;
                 right:0;
-                bottom:0.2rem;
+                top:0.5rem;
             }
             
         }
