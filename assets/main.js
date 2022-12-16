@@ -147,12 +147,10 @@ subButton.addEventListener("click", getInfo);
 
 // ChangingStatus
 
-// let buttonTodo = document.getElementById("task__wrapper__head__done");
-// buttonTodo.addEventListener('click', () => {
-   
-//    console.log("À remplir ici");
-
-// })
+let buttonTodo = document.getElementById("task__wrapper__head__done");
+buttonTodo.addEventListener('click', () => {
+  console.log("À remplir ici");
+})
 
 // sorting stuff
 let sorting = document.getElementsByName("tasks")[0];
@@ -212,14 +210,6 @@ function loadObject() {
   let loadObject = localStorage.getItem("Tasks");
   TASKS = JSON.parse(loadObject);
 }
-
-/*window.addEventListener("load", loadObject);*/
-
-remainingTime();
-
-// DisplayRemainingTime
-
-
 //Display number of task
 
 function displayCurrentTasks(){
