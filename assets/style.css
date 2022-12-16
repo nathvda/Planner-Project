@@ -162,6 +162,27 @@ header #currentTasks {
   width: 35%;
   height: 75%;
 }
+#task__wrapper__box .task__wrapper__head .task__wrapper__head__date__done .ToDo {
+  background-image: url(./svg/hourglass-top.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+  background-color: lightgray;
+}
+#task__wrapper__box .task__wrapper__head .task__wrapper__head__date__done .Done {
+  background-image: url(./svg/check-lg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+  background-color: lightgray;
+}
+#task__wrapper__box .task__wrapper__head .task__wrapper__head__date__done .Doing {
+  background-image: url(./svg/clock-history.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  background-color: lightgray;
+}
 #task__wrapper__box .task__wrapper__description {
   display: flex;
   flex-direction: column;
@@ -286,13 +307,17 @@ header #currentTasks {
     flex-wrap: wrap;
   }
   #task__wrapper .task__wrapper__head .task__wrapper__head__color {
-    width: 6%;
-    height: 55%;
+    width: 3vw;
+    height: 3vw;
     left: 5%;
     top: 15%;
   }
   #task__wrapper .task__wrapper__head .task__wrapper__head__title__time {
     text-align: left;
     padding-left: 8vw;
+  }
+  #task__wrapper .task__wrapper__head .task__wrapper__head__date__done .task__wrapper__head__done {
+    width: 3vw;
+    height: 3vw;
   }
 }/*# sourceMappingURL=style.css.map */

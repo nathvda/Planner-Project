@@ -13,12 +13,12 @@ console.log(trying);
 
 export let TASKS = [
   {
-    name: "jardinage",
-    description: "manger du chocolat manger du chocolat manger du chocolat manger du chocolat manger du chocolat manger du chocolat manger du chocolat manger du chocolat manger du chocolat manger du chocolat manger du chocolat manger du chocolat manger du chocolat manger du chocolat manger du chocolat manger du choco",
+    name: "jardinage de merde je suis ",
+    description: "manger du chocolat",
     date: "2022-12-13",
     delay: -224935422,
     remainingTime: "3d ago",
-    type: "Work",
+    type: "Sport",
     status: "ToDo",
   },
   {
@@ -36,7 +36,7 @@ export let TASKS = [
    date: "2022-12-13",
    delay: -224935422,
    remainingTime: "3d ago",
-   type: "Home",
+   type: "Purchase",
    status: "Doing",
  },
  {
@@ -45,7 +45,7 @@ export let TASKS = [
    date: "2022-12-13",
    delay: -224935422,
    remainingTime: "3d ago",
-   type: "Purchase",
+   type: "Home",
    status: "Doing",
  },
 ];
