@@ -1,16 +1,12 @@
-import { TASKS } from "../main.js";
-
 // Sorting
-export function sortBy(){
+export function sortBy(ToSort){
 
     let alpha = document.querySelector('input[type="radio"]:checked').value;
     console.log(alpha);
     
     if (alpha == "remainingTime"){
-    const SORTEDOBJECT = TASKS.sort((a,b) => a.remainingTime - b.remainingTime);
-    console.log(SORTEDOBJECT);
+    let TASKS = ToSort.sort((a,b) => a.delay - b.delay);
     } else if (alpha == "taskName"){
-    const SORTEDOBJECT = TASKS.sort((a,b) => a.name > b.name);
-    console.log(SORTEDOBJECT);
+    let TASKS = ToSort.sort((a,b) => a.name > b.name);
     }}
     

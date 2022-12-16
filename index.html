@@ -9,7 +9,6 @@
     <script defer src="./assets/main.js" type="module"></script>
     <script defer src="./assets/modules/Sorting.js" type="module"></script>
     <script defer src="./assets/modules/Calculations.js" type="module"></script>
-    <script defer src="./assets/modules/Object.js" type="module"></script>
     <script defer src="./assets/modules/Class.js" type="module"></script>
 
     <title>CHECKit</title>
@@ -33,6 +32,17 @@
                 <label for="remainingTime">Remaining time</label>
                 <input name="tasks" id="taskName" type="radio" value="taskName"/>
                 <label for="taskName">name</label>
+            </form>
+           <form id="show" name="Show">
+            <!--<input name="Show" type="radio" id="All" value="All">
+            <label for="All">All</label>-->
+            <input name="Show" type="radio" id="Done" value="Done">
+            <label for="Done">Done</label>
+            <input name="Show" type="radio" id="Doing" value="Doing">
+            <label for="Doing">Doing</label>           
+            <input name="Show" type="radio" id="ToDo" value="ToDo">
+            <label for="ToDo">To Do</label>
+
             </form>
         </article>
 
@@ -99,7 +109,7 @@
 
             <label for="dtaskSelect">Select your task</label>
             <select name="select" id="dtaskSelect" required>
-                <option value="" disabled selected hidden>Choose</option>
+                <option value="choose" disabled selected hidden>Choose</option>
                 <option value="Homework">Do my homework</option>
                 <option value="Work">Advance in my work</option>
                 <option value="Home">Taking care of the house</option>
@@ -109,12 +119,12 @@
 
             <label for="dtaskSelectStatut">Advancement</label>
             <select name="selectStatut" id="dtaskSelectStatut" required>
-                <option value="" disabled selected hidden>Choose</option>
+                <option value="choose" disabled selected hidden>Choose</option>
                 <option value="ToDo">To do</option>
                 <option value="Doing">Doing</option>
                 <option value="Done">Done</option>
             </select> 
-            <button aria-label="buttonForm" id="descriptionForm__button">Submit</button>
+            <button type="button" aria-label="buttonForm" id="descriptionForm__button">Submit</button>
         </form>
     </main>
 
