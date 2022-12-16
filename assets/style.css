@@ -12,6 +12,81 @@ body {
   background-color: #F1F1F1;
 }
 
+#loadingScreen.visible {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+  opacity: 1;
+}
+#loadingScreen.visible img {
+  animation: floating 1s alternate-reverse infinite ease-in-out;
+  width: 30%;
+  transition: 1s;
+}
+
+#loadingScreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+  opacity: 0;
+  transition: 1s;
+  overflow-x: hidden;
+}
+#loadingScreen img {
+  animation: floating 1s alternate-reverse infinite ease-in-out;
+  width: 0%;
+  transition: 1s;
+}
+
+#loadingScreen.visible {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+  opacity: 1;
+  overflow-x: hidden;
+}
+#loadingScreen.visible img {
+  animation: floating 1s alternate-reverse infinite ease-in-out;
+  height: 50%;
+  transition: 1s;
+}
+
+@-webkit-keyframes floating {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes floating {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(20px);
+  }
+}
 header {
   padding: 1em;
   border-bottom: 1px solid #262626;
