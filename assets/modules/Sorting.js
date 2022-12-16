@@ -1,5 +1,3 @@
-import { TASKS } from "../main.js";
-
 // Sorting
 export function sortBy(){
 

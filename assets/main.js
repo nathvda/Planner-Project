@@ -2,53 +2,9 @@ import { remainingTime, checkDelay } from "./modules/Calculations.js";
 import { sortBy } from "./modules/Sorting.js";
 import { NewTask } from "./modules/Class.js";
 
-// Creating new Object
-let trying = new NewTask(
-  "jardinage",
-  "manger du chocolat",
-  "2022-12-13",
-  "dormir"
-);
-console.log(trying);
+let TASKS = [];
 
-export let TASKS = [
-  {
-    name: "jardinage",
-    description: "manger du chocolat",
-    date: "2022-12-13",
-    delay: -224935422,
-    remainingTime: "3d ago",
-    type: "dormir",
-    status: "ToDo",
-  },
-  {
-   name: "jardinage",
-   description: "manger du chocolat",
-   date: "2022-12-13",
-   delay: -224935422,
-   remainingTime: "3d ago",
-   type: "Homework",
-   status: "Done",
- },
- {
-   name: "jardinage",
-   description: "manger du chocolat",
-   date: "2022-12-13",
-   delay: -224935422,
-   remainingTime: "3d ago",
-   type: "dormir",
-   status: "Doing",
- },
- {
-   name: "jardinage",
-   description: "manger du chocolat",
-   date: "2022-12-13",
-   delay: -224935422,
-   remainingTime: "3d ago",
-   type: "dormir",
-   status: "Doing",
- },
-];
+loadObject();
 
 // AddingTask
 function AddingTask(name, description, date, type, status, remainingTime) {
@@ -64,10 +20,7 @@ function AddingTask(name, description, date, type, status, remainingTime) {
 
   let head_color = document.createElement("div");
   head_color.setAttribute("id", "task__wrapper__head__color");
-  head_color.classList.add(
-    "task__wrapper__head__color",
-    type
-  );
+  head_color.classList.add("task__wrapper__head__color",type);
 
   let title_time = document.createElement("div");
   title_time.setAttribute("id", "task__wrapper__head__title__time");
@@ -124,7 +77,13 @@ function AddingTask(name, description, date, type, status, remainingTime) {
 
 }
 
+CreatingTask() 
+
 function CreatingTask(){
+
+  document.getElementById("task__wrapper").innerHTML = "";
+
+
    for(let elem of TASKS){
       let nom=elem["name"];
       let descript=elem["description"];
@@ -135,11 +94,6 @@ function CreatingTask(){
       AddingTask(nom, descript, time, types, faire, reste);
    }
 }
-
-
-
-CreatingTask()
-
 
 function getInfo() {
   let nameTask = document.getElementById("dtaskName").value;
@@ -176,6 +130,7 @@ function getInfo() {
   console.log(TASKS);
 
   saveObject();
+  CreatingTask();
 
   return TASKS;
 }
@@ -193,10 +148,10 @@ subButton.addEventListener("click", getInfo);
 //    console.log("À remplir ici");
 
 // })
-
+/*
 // sorting stuff
 let sorting = document.getElementsByName("tasks")[0];
-sorting.addEventListener("change", sortBy);
+sorting.addEventListener("change", sortBy);*/
 
 // Open menus
 /** iden = the id of the button */
@@ -222,15 +177,15 @@ formButton.addEventListener("click", () => {
 // LocalStorageSaving
 
 function saveObject() {
-  window.localStorage.setItem("Tasks", JSON.stringify(TASKS));
+  localStorage.setItem("Tasks", JSON.stringify(TASKS));
 }
 
 function loadObject() {
-  let loadObject = window.localStorage.getItem("Tasks");
+  let loadObject = localStorage.getItem("Tasks");
   TASKS = JSON.parse(loadObject);
 }
 
-window.addEventListener("load", loadObject);
+/*window.addEventListener("load", loadObject);*/
 
 remainingTime();
 
@@ -243,4 +198,5 @@ function displayCurrentTasks(){
 
 document.getElementById("currentTasks").innerHTML = TASKS.length;
 }
+
 displayCurrentTasks();
