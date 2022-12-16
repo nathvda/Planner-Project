@@ -1,4 +1,3 @@
-import { remainingTime, checkDelay } from "./modules/Calculations.js";
 import { sortBy } from "./modules/Sorting.js";
 import { NewTask } from "./modules/Class.js";
 
@@ -20,7 +19,7 @@ function AddingTask(name, description, date, type, status, remainingTime) {
 
   let head_color = document.createElement("div");
   head_color.setAttribute("id", "task__wrapper__head__color");
-  head_color.classList.add("task__wrapper__head__color",type);
+  head_color.classList.add("task__wrapper__head__color",`${type}`);
 
   let title_time = document.createElement("div");
   title_time.setAttribute("id", "task__wrapper__head__title__time");
@@ -29,13 +28,13 @@ function AddingTask(name, description, date, type, status, remainingTime) {
   let p_title = document.createElement("p");
   p_title.setAttribute("id", "task__wrapper__head__title");
   p_title.classList.add("task__wrapper__head__title");
-  let p_titletexte=document.createTextNode(name);
+  let p_titletexte=document.createTextNode(`${name}`);
   p_title.appendChild(p_titletexte)
 
   let p_time = document.createElement("p");
   p_time.setAttribute("id", "task__wrapper__head__time");
   p_time.classList.add("task__wrapper__head__time");
-  let p_timetexte=document.createTextNode(remainingTime);
+  let p_timetexte=document.createTextNode(`${remainingTime}`);
   p_time.appendChild(p_timetexte);
 
   let date_done = document.createElement("div");
@@ -45,14 +44,15 @@ function AddingTask(name, description, date, type, status, remainingTime) {
   let p_date = document.createElement("p");
   p_date.setAttribute("id", "task__wrapper__head__date");
   p_date.classList.add("task__wrapper__head__date");
-  let p_datetime=document.createTextNode(date);
+  let p_datetime=document.createTextNode(`${date}`);
   p_date.appendChild(p_datetime);
 
   let b_done = document.createElement("button");
+  b_done.setAttribute("aria-label", "button_tocheck");
   b_done.setAttribute("id", "task__wrapper__head__done");
   b_done.classList.add(
     "task__wrapper__head__done",
-    status
+    `${status}`
    );
 
   let task_desc = document.createElement("div");
@@ -63,7 +63,7 @@ function AddingTask(name, description, date, type, status, remainingTime) {
   desc_delete.setAttribute("id", "task__wrapper__description__delete");
   desc_delete.classList.add(
     "task__wrapper__description__delete",
-    type
+   `${type}`
   );
 
   let p_desc = document.createElement("p");
@@ -84,7 +84,7 @@ function AddingTask(name, description, date, type, status, remainingTime) {
   task_desc.appendChild(desc_delete);
 }
 
-CreatingTask(TASKS) 
+CreatingTask(TASKS)
 
 function CreatingTask(ToCreate){
 
@@ -153,19 +153,33 @@ let subButton = document.getElementById("descriptionForm__button");
 subButton.addEventListener("click", getInfo);
 
 // ChangingStatus
-/*
+
 let buttonTodo = document.getElementById("task__wrapper").children;
 for ( let i = 0; i < buttonTodo.length ; i++)
 
 buttonTodo[i].addEventListener('click', (e) => {
 
     console.log(e.target.classList);
-    console.log("À remplir ici");
-    TASKS[i].status = "DONE";
-    CreatingTask(TASKS);
-    
+
+    if (e.target.classList.contains("Done")){
+      e.target.classList.remove("Done");
+      e.target.classList.add("ToDo");
+      TASKS[i].status = "ToDo";}
+      else if (e.target.classList.contains("Doing")){
+
+        e.target.classList.remove("Doing");
+        e.target.classList.add("Done");
+        TASKS[i].status = "Done";
+      } else {
+     e.target.classList.contains("ToDo")
+        e.target.classList.remove("ToDo");
+        e.target.classList.add("Doing");
+        TASKS[i].status = "Doing";
+    }
+    saveObject();
+
   })
-*/
+
 
 // sorting stuff
 let sorting = document.getElementsByName("tasks")[0];
@@ -173,7 +187,6 @@ sorting.addEventListener("change", () => {
   loadObject();
   sortBy(TASKS);
   hiding();
-  saveObject();
 });
 
 let showOrNot = document.getElementById("show");
@@ -186,8 +199,8 @@ let ToShow = TASKS.filter((elem) => elem.status == alpha);
 CreatingTask(ToShow);
 
 if (alpha == "All"){
+    sortBy(TASKS)
     CreatingTask(TASKS);
-    console.log("???");
 }
 }
 

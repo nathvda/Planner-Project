@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="">
+    <meta name="description" content="A simple task manager">
     <link rel="shortcut icon" href="./assets/images/favico.png" type="image/x-icon"> 
     <link rel="stylesheet" href="./assets/style.css">
     <script defer src="./assets/main.js" type="module"></script>
@@ -36,8 +37,8 @@
             </form>
             <div class="filters__title">Show only:</div>
            <form id="show" name="Show">
-            <!--<input name="Show" type="radio" id="All" value="All">
-            <label for="All">All</label>-->
+            <input name="Show" type="radio" id="All" value="All">
+            <label for="All">All</label>
             <input name="Show" type="radio" id="Done" value="Done">
             <label for="Done">Done</label>
             <input name="Show" type="radio" id="Doing" value="Doing">
@@ -111,6 +112,7 @@
 
             <label for="dtaskSelect">Select your task</label>
             <select name="select" id="dtaskSelect" required>
+                <option value="choose" selected disabled hidden>Choose</option>
                 <option value="Homework">Do my homework</option>
                 <option value="Work">Advance in my work</option>
                 <option value="Home">Taking care of the house</option>
@@ -120,11 +122,12 @@
 
             <label for="dtaskSelectStatut">Advancement</label>
             <select name="selectStatut" id="dtaskSelectStatut" required>
+                <option value="choose" selected disabled hidden>Choose</option>
                 <option value="ToDo">To do</option>
                 <option value="Doing">Doing</option>
                 <option value="Done">Done</option>
             </select> 
-            <button type="button" aria-label="buttonForm" id="descriptionForm__button">Submit</button>
+            <button aria-label="buttonForm" id="descriptionForm__button">Submit</button>
         </form>
     </main>
 
