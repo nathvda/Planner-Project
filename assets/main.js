@@ -11,7 +11,7 @@ let month = (date.getMonth())+1;
 let year = date.getFullYear();
 document.getElementById("dtaskDate").value = `${year}-${(month < 10) ? `0${month}` : `${month}`}-${(day < 10) ? `0${day}` : `${day}`}`;
 
-window.addEventListener("load", loadScreen);
+document.body.addEventListener("load", loadScreen);
 
 function loadScreen(){
   setTimeout(()=>{
