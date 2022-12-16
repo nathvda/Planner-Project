@@ -153,19 +153,33 @@ let subButton = document.getElementById("descriptionForm__button");
 subButton.addEventListener("click", getInfo);
 
 // ChangingStatus
-/*
+
 let buttonTodo = document.getElementById("task__wrapper").children;
 for ( let i = 0; i < buttonTodo.length ; i++)
 
 buttonTodo[i].addEventListener('click', (e) => {
 
     console.log(e.target.classList);
-    console.log("À remplir ici");
-    TASKS[i].status = "DONE";
-    CreatingTask(TASKS);
-    
+
+    if (e.target.classList.contains("Done")){
+      e.target.classList.remove("Done");
+      e.target.classList.add("ToDo");
+      TASKS[i].status = "ToDo";}
+      else if (e.target.classList.contains("Doing")){
+
+        e.target.classList.remove("Doing");
+        e.target.classList.add("Done");
+        TASKS[i].status = "Done";
+      } else {
+     e.target.classList.contains("ToDo")
+        e.target.classList.remove("ToDo");
+        e.target.classList.add("Doing");
+        TASKS[i].status = "Doing";
+    }
+    saveObject();
+
   })
-*/
+
 
 // sorting stuff
 let sorting = document.getElementsByName("tasks")[0];
@@ -173,7 +187,6 @@ sorting.addEventListener("change", () => {
   loadObject();
   sortBy(TASKS);
   hiding();
-  saveObject();
 });
 
 let showOrNot = document.getElementById("show");
@@ -186,8 +199,8 @@ let ToShow = TASKS.filter((elem) => elem.status == alpha);
 CreatingTask(ToShow);
 
 if (alpha == "All"){
+    sortBy(TASKS)
     CreatingTask(TASKS);
-    console.log("???");
 }
 }
 
