@@ -77,19 +77,19 @@ function AddingTask(name, description, date, type, status, remainingTime) {
 
 }
 
-CreatingTask() 
+CreatingTask(TASKS) 
 
-function CreatingTask(){
+function CreatingTask(ToCreate){
 
   loadObject();
 
   document.getElementById("task__wrapper").innerHTML = "";
 
-  if (TASKS == null){
+  if (ToCreate == null){
     return
   }
 
-  for(let elem of TASKS){
+  for(let elem of ToCreate){
       let nom=elem["name"];
       let descript=elem["description"];
       let time=elem["date"];
@@ -145,8 +145,6 @@ function getInfo() {
 let subButton = document.getElementById("descriptionForm__button");
 subButton.addEventListener("click", getInfo);
 
-// DisplayingTask
-
 // ChangingStatus
 
 // let buttonTodo = document.getElementById("task__wrapper__head__done");
@@ -165,12 +163,23 @@ sorting.addEventListener("change", () => {
   CreatingTask();
 });
 
+let showOrNot = document.getElementById("show");
 
-/*TASKS.filter(ifTodo);
-function ifTodo(){
+function hiding(){
 
+let alpha = showOrNot.querySelector('input[type="radio"]:checked').value;
+let ToShow = TASKS.filter((elem) => elem.status == alpha);
 
-}*/
+console.log(ToShow);
+CreatingTask(ToShow);
+
+if (alpha == "All"){
+  CreatingTask(TASKS);
+}
+}
+
+showOrNot.addEventListener('change', (e) => hiding());
+
 
 // Open menus
 /** iden = the id of the button */
