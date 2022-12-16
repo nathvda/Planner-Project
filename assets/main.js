@@ -136,6 +136,7 @@ function CreatingTask(ToCreate){
 }
 
 function getInfo() {
+
   let nameTask = document.getElementById("dtaskName").value;
   console.log(nameTask);
   let descriptionTask = document.getElementById("dText").value;
@@ -157,7 +158,7 @@ function getInfo() {
     .querySelectorAll("option");
   let valueOption2 = selectOption2[select2].value;
 
-  let task = new NewTask(
+  if(nameTask !== "" && descriptionTask !== "" && valueOption1 !== "choose" && valueOption2 !== "choose"){let task = new NewTask(
     nameTask,
     descriptionTask,
     dateTask,
@@ -176,6 +177,7 @@ function getInfo() {
   saveObject();
   CreatingTask(TASKS);
   displayCurrentTasks();
+}
 }
 
 let subButton = document.getElementById("descriptionForm__button");
