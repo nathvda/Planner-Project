@@ -81,9 +81,15 @@ CreatingTask()
 
 function CreatingTask(){
 
+  loadObject();
+
   document.getElementById("task__wrapper").innerHTML = "";
 
-   for(let elem of TASKS){
+  if (TASKS == null){
+    return
+  }
+
+  for(let elem of TASKS){
       let nom=elem["name"];
       let descript=elem["description"];
       let time=elem["date"];
@@ -123,15 +129,17 @@ function getInfo() {
     valueOption1,
     valueOption2
   );
-  console.log(task);
 
+  if (TASKS == null){
+     TASKS = [];
+  }
+
+  console.log(task);
   TASKS.push(task);
   console.log(TASKS);
 
   saveObject();
   CreatingTask();
-
-  return TASKS;
 }
 
 let subButton = document.getElementById("descriptionForm__button");
@@ -147,10 +155,22 @@ subButton.addEventListener("click", getInfo);
 //    console.log("À remplir ici");
 
 // })
-/*
+
 // sorting stuff
 let sorting = document.getElementsByName("tasks")[0];
-sorting.addEventListener("change", sortBy);*/
+sorting.addEventListener("change", () => {
+  loadObject();
+  sortBy(TASKS);
+  saveObject();
+  CreatingTask();
+});
+
+
+/*TASKS.filter(ifTodo);
+function ifTodo(){
+
+
+}*/
 
 // Open menus
 /** iden = the id of the button */
@@ -194,7 +214,9 @@ remainingTime();
 //Display number of task
 
 function displayCurrentTasks(){
-
+  if (TASKS == null){
+    return
+  }
 document.getElementById("currentTasks").innerHTML = TASKS.length;
 }
 
