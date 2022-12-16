@@ -7,12 +7,13 @@ loadObject();
 displayCurrentTasks();
 
 // AddingTask
-function AddingTask(name, description, date, type, status, remainingTime) {
+function AddingTask(name, description, date, type, status, remainingTime, x) {
+
   let wrapper = document.getElementById("task__wrapper");
 
   let box = document.createElement("div");
   box.setAttribute("id", "task__wrapper__box");
-  box.classList.add("task__wrapper__box");
+  box.classList.add("task__wrapper__box", `tache-${x}`);
 
   let task_head = document.createElement("div");
   task_head.setAttribute("id", "task__wrapper__head");
@@ -66,10 +67,21 @@ function AddingTask(name, description, date, type, status, remainingTime) {
 
   let desc_delete_b = document.createElement("button");
   desc_delete_b.setAttribute("id", "task__wrapper__description__delete__button");
+  desc_delete_b.setAttribute("aria-label", "bouton_poubelle");
   desc_delete_b.classList.add(
-    "task__wrapper__description__delete__button",
-   `${type}`
+    "task__wrapper__description__delete__button", `poubelle-${x}`
   );
+
+  desc_delete_b.addEventListener('click', (e) => {
+    let idpoubelle = e.target.classList.item(1);
+    let IdPoubelle = idpoubelle.split("-");
+    console.log(IdPoubelle[1]);
+
+    document.querySelector(`.tache-${IdPoubelle[1]}`).remove();
+    TASKS.splice(IdPoubelle[1], 1);
+    console.log(TASKS);
+    saveObject();
+  })
 
   let p_desc = document.createElement("p");
   let p_desctexte=document.createTextNode(description);
@@ -88,7 +100,6 @@ function AddingTask(name, description, date, type, status, remainingTime) {
   task_desc.appendChild(p_desc);
   task_desc.appendChild(desc_delete);
   desc_delete.appendChild(desc_delete_b);
-
 }
 
 CreatingTask(TASKS)
@@ -102,7 +113,7 @@ function CreatingTask(ToCreate){
   if (ToCreate == null){
     return
   }
-
+  let x = 0;
   for(let elem of ToCreate){
       let nom=elem["name"];
       let descript=elem["description"];
@@ -110,7 +121,8 @@ function CreatingTask(ToCreate){
       let types=elem["type"];
       let faire=elem["status"];
       let reste=elem["remainingTime"];
-      AddingTask(nom, descript, time, types, faire, reste);
+      AddingTask(nom, descript, time, types, faire, reste, x);
+      x++;
    }
 
    addToggle();
@@ -219,7 +231,6 @@ showOrNot.addEventListener('change', () => {
 loadObject();
 sortBy(TASKS);
 hiding();
-reveal();
 saveObject();
 });
 
