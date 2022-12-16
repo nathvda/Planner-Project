@@ -310,14 +310,20 @@ header{
         }
         .task__wrapper__head{
             .task__wrapper__head__color{
-                width: 6%;
-                height: 55%;
+                width: 3vw;
+                height: 3vw;
                 left: 5%;
                 top: 15%;
             }
             .task__wrapper__head__title__time{
                 text-align: left;
                 padding-left: 8vw;
+            }
+            .task__wrapper__head__date__done{
+                .task__wrapper__head__done{
+                    width: 3vw;
+                    height: 3vw;
+                }
             }
         }
     }
