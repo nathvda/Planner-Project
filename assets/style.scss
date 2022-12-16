@@ -219,15 +219,21 @@ header{
     .task__wrapper__description{ 
             display: flex;
             flex-direction: column;
+            position:relative;
+
         .task__wrapper__description__delete{
             text-align: right;
             .task__wrapper__description__delete__button{
                 width: 3vw;
                 height: 3vw;
                 margin: 1%;
+                background-color:transparent;
                 background-image: url(./svg/trash3-fill.svg);
                 background-size: contain;
                 border: none; 
+                position:absolute;
+                right:0;
+                bottom:0.2rem;
             }
             
         }
@@ -250,7 +256,8 @@ header{
     padding:1em;
     border:none;
     border-radius:100%;
-    color:$white;}
+    color:$white;
+}
 
 // FORM
 
@@ -306,6 +313,20 @@ header{
 #descripForm.showFilters{
     visibility:visible;
 }
+
+#descriptionForm__button{
+    width:fit-content;
+    align-self:center;
+    text-transform:uppercase;
+    margin-top:1rem;
+    font-weight:bolder;
+    background-image:linear-gradient(90deg, $yellow, $fuschia);
+    padding:1em;
+    border:none;
+    border-radius:0.5rem;
+    color:$white;
+}
+
 
 @media screen and (min-width:768px){
 
