@@ -5,6 +5,11 @@ let TASKS = [];
 
 loadObject();
 displayCurrentTasks();
+let date = new Date();
+let day = date.getDate();
+let month = (date.getMonth())+1;
+let year = date.getFullYear();
+document.getElementById("dtaskDate").value = `${year}-${(month < 10) ? `0${month}` : `${month}`}-${(day < 10) ? `0${day}` : `${day}`}`;
 
 // AddingTask
 function AddingTask(name, description, date, type, status, remainingTime, x) {
@@ -73,6 +78,7 @@ function AddingTask(name, description, date, type, status, remainingTime, x) {
   );
 
   desc_delete_b.addEventListener('click', (e) => {
+    loadObject();
     let idpoubelle = e.target.classList.item(1);
     let IdPoubelle = idpoubelle.split("-");
     console.log(IdPoubelle[1]);
