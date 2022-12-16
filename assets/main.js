@@ -1,4 +1,3 @@
-import { remainingTime, checkDelay } from "./modules/Calculations.js";
 import { sortBy } from "./modules/Sorting.js";
 import { NewTask } from "./modules/Class.js";
 
@@ -20,7 +19,7 @@ function AddingTask(name, description, date, type, status, remainingTime) {
 
   let head_color = document.createElement("div");
   head_color.setAttribute("id", "task__wrapper__head__color");
-  head_color.classList.add("task__wrapper__head__color",type);
+  head_color.classList.add("task__wrapper__head__color",`${type}`);
 
   let title_time = document.createElement("div");
   title_time.setAttribute("id", "task__wrapper__head__title__time");
@@ -29,13 +28,13 @@ function AddingTask(name, description, date, type, status, remainingTime) {
   let p_title = document.createElement("p");
   p_title.setAttribute("id", "task__wrapper__head__title");
   p_title.classList.add("task__wrapper__head__title");
-  let p_titletexte=document.createTextNode(name);
+  let p_titletexte=document.createTextNode(`${name}`);
   p_title.appendChild(p_titletexte)
 
   let p_time = document.createElement("p");
   p_time.setAttribute("id", "task__wrapper__head__time");
   p_time.classList.add("task__wrapper__head__time");
-  let p_timetexte=document.createTextNode(remainingTime);
+  let p_timetexte=document.createTextNode(`${remainingTime}`);
   p_time.appendChild(p_timetexte);
 
   let date_done = document.createElement("div");
@@ -45,14 +44,15 @@ function AddingTask(name, description, date, type, status, remainingTime) {
   let p_date = document.createElement("p");
   p_date.setAttribute("id", "task__wrapper__head__date");
   p_date.classList.add("task__wrapper__head__date");
-  let p_datetime=document.createTextNode(date);
+  let p_datetime=document.createTextNode(`${date}`);
   p_date.appendChild(p_datetime);
 
   let b_done = document.createElement("button");
+  b_done.setAttribute("aria-label", "button_tocheck");
   b_done.setAttribute("id", "task__wrapper__head__done");
   b_done.classList.add(
     "task__wrapper__head__done",
-    status
+    `${status}`
    );
 
   let task_desc = document.createElement("div");
@@ -63,7 +63,7 @@ function AddingTask(name, description, date, type, status, remainingTime) {
   desc_delete.setAttribute("id", "task__wrapper__description__delete");
   desc_delete.classList.add(
     "task__wrapper__description__delete",
-    type
+   `${type}`
   );
 
   let p_desc = document.createElement("p");
@@ -84,7 +84,7 @@ function AddingTask(name, description, date, type, status, remainingTime) {
   task_desc.appendChild(desc_delete);
 }
 
-CreatingTask(TASKS) 
+CreatingTask(TASKS)
 
 function CreatingTask(ToCreate){
 
