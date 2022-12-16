@@ -144,6 +144,9 @@ header #currentTasks {
 }
 #task__wrapper__box .task__wrapper__head .task__wrapper__head__title__time .task__wrapper__head__title {
   font-size: 1.5rem;
+  width: 8ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 #task__wrapper__box .task__wrapper__head .task__wrapper__head__title__time .task__wrapper__head__time {
   font-size: 0.8rem;
@@ -193,8 +196,8 @@ header #currentTasks {
   text-align: right;
 }
 #task__wrapper__box .task__wrapper__description .task__wrapper__description__delete .task__wrapper__description__delete__button {
-  width: 3vw;
-  height: 3vw;
+  width: 1.8rem;
+  height: 1.8rem;
   margin: 1%;
   background-color: transparent;
   background-image: url(./svg/trash3-fill.svg);
