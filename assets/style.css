@@ -144,6 +144,9 @@ header #currentTasks {
 }
 #task__wrapper__box .task__wrapper__head .task__wrapper__head__title__time .task__wrapper__head__title {
   font-size: 1.5rem;
+  width: 8ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 #task__wrapper__box .task__wrapper__head .task__wrapper__head__title__time .task__wrapper__head__time {
   font-size: 0.8rem;
