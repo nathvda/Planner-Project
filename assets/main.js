@@ -18,7 +18,7 @@ export let TASKS = [
     date: "2022-12-13",
     delay: -224935422,
     remainingTime: "3d ago",
-    type: "dormir",
+    type: "Work",
     status: "ToDo",
   },
   {
@@ -36,7 +36,7 @@ export let TASKS = [
    date: "2022-12-13",
    delay: -224935422,
    remainingTime: "3d ago",
-   type: "dormir",
+   type: "Home",
    status: "Doing",
  },
  {
@@ -45,9 +45,18 @@ export let TASKS = [
    date: "2022-12-13",
    delay: -224935422,
    remainingTime: "3d ago",
-   type: "dormir",
+   type: "Purchase",
    status: "Doing",
  },
+ {
+  name: "jardinage",
+  description: "manger du chocolat",
+  date: "2022-12-13",
+  delay: -224935422,
+  remainingTime: "3d ago",
+  type: "Sport",
+  status: "Doing",
+},
 ];
 
 // AddingTask

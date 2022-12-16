@@ -145,19 +145,29 @@ header{
             top: 15%;
         }
         .Work{
-            background-color: $purple;
+            //background-color: $purple;
+            background-image: url(./svg/person-workspace.svg);
+            background-size: cover;
         }
         .Homework{
-            background-color: $orange;
+            //background-color: $orange;
+            background-image: url(./svg/mortarboard-fill.svg);
+            background-size: cover;
         }
         .Home{
-            background-color: $blue;
+            //background-color: $blue;
+            background-image: url(./svg/house-door-fill.svg);
+            background-size: cover;
         }
         .Purchase{
-            background-color: $fuschia;
+            //background-color: $fuschia;
+            background-image: url(./svg/basket2-fill.svg);
+            background-size: cover;
         }
         .Sport{
-            background-color: $yellow;
+            //background-color: $yellow;
+            background-image: url(./svg/bicycle.svg);
+            background-size: cover;
         }
         .task__wrapper__head__title__time{
             text-align: left;
