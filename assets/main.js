@@ -80,6 +80,7 @@ function AddingTask(name, description, date, type, status, remainingTime, x) {
     document.querySelector(`.tache-${IdPoubelle[1]}`).remove();
     TASKS.splice(IdPoubelle[1], 1);
     console.log(TASKS);
+    displayCurrentTasks();
     saveObject();
   })
 
@@ -175,9 +176,10 @@ let subButton = document.getElementById("descriptionForm__button");
 subButton.addEventListener("click", getInfo);
 
 // ChangingStatus
-
 function addToggle(){
-let buttonTodo = document.getElementById("task__wrapper").children;
+  
+let buttonTodo = document.getElementById("task__wrapper").querySelectorAll(".task__wrapper__head__done");
+
 for ( let i = 0; i < buttonTodo.length ; i++)
 
 buttonTodo[i].addEventListener('click', (e) => {
