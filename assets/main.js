@@ -4,6 +4,7 @@ import { NewTask } from "./modules/Class.js";
 let TASKS = [];
 
 loadObject();
+displayCurrentTasks();
 
 // AddingTask
 function AddingTask(name, description, date, type, status, remainingTime) {
@@ -105,6 +106,8 @@ function CreatingTask(ToCreate){
       let reste=elem["remainingTime"];
       AddingTask(nom, descript, time, types, faire, reste);
    }
+
+   addToggle();
 }
 
 function getInfo() {
@@ -147,6 +150,7 @@ function getInfo() {
 
   saveObject();
   CreatingTask(TASKS);
+  displayCurrentTasks();
 }
 
 let subButton = document.getElementById("descriptionForm__button");
@@ -154,6 +158,7 @@ subButton.addEventListener("click", getInfo);
 
 // ChangingStatus
 
+function addToggle(){
 let buttonTodo = document.getElementById("task__wrapper").children;
 for ( let i = 0; i < buttonTodo.length ; i++)
 
@@ -179,6 +184,7 @@ buttonTodo[i].addEventListener('click', (e) => {
     saveObject();
 
   })
+}
 
 
 // sorting stuff
@@ -192,7 +198,6 @@ sorting.addEventListener("change", () => {
 let showOrNot = document.getElementById("show");
 
 function hiding(){
-
 let alpha = showOrNot.querySelector('input[type="radio"]:checked').value;
 let ToShow = TASKS.filter((elem) => elem.status == alpha);
 
@@ -208,6 +213,7 @@ showOrNot.addEventListener('change', () => {
 loadObject();
 sortBy(TASKS);
 hiding();
+reveal();
 saveObject();
 });
 
@@ -251,5 +257,3 @@ function displayCurrentTasks(){
   }
 document.getElementById("currentTasks").innerHTML = TASKS.length;
 }
-
-displayCurrentTasks();
