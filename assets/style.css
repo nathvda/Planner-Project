@@ -120,23 +120,27 @@ header #currentTasks {
 }
 #task__wrapper__box .task__wrapper__head .Work {
   background-image: url(./svg/person-workspace.svg);
-  background-size: cover;
+  background-size: contain;
 }
 #task__wrapper__box .task__wrapper__head .Homework {
   background-image: url(./svg/mortarboard-fill.svg);
-  background-size: cover;
+  background-size: contain;
 }
 #task__wrapper__box .task__wrapper__head .Home {
   background-image: url(./svg/house-door-fill.svg);
-  background-size: cover;
+  background-size: contain;
 }
 #task__wrapper__box .task__wrapper__head .Purchase {
   background-image: url(./svg/basket2-fill.svg);
-  background-size: cover;
+  background-size: contain;
 }
 #task__wrapper__box .task__wrapper__head .Sport {
   background-image: url(./svg/bicycle.svg);
-  background-size: cover;
+  background-size: contain;
+}
+#task__wrapper__box .task__wrapper__head .Other {
+  background-image: url(./svg/stars.svg);
+  background-size: contain;
 }
 #task__wrapper__box .task__wrapper__head .task__wrapper__head__title__time {
   text-align: left;
@@ -202,6 +206,7 @@ header #currentTasks {
   background-color: transparent;
   background-image: url(./svg/trash3-fill.svg);
   background-size: contain;
+  background-repeat: no-repeat;
   border: none;
   position: absolute;
   right: 0;
