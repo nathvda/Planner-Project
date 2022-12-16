@@ -157,6 +157,27 @@ header #currentTasks {
   width: 35%;
   height: 75%;
 }
+#task__wrapper__box .task__wrapper__head .task__wrapper__head__date__done .ToDo {
+  background-image: url(./svg/hourglass-top.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+  background-color: lightgray;
+}
+#task__wrapper__box .task__wrapper__head .task__wrapper__head__date__done .Done {
+  background-image: url(./svg/check-lg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+  background-color: lightgray;
+}
+#task__wrapper__box .task__wrapper__head .task__wrapper__head__date__done .Doing {
+  background-image: url(./svg/clock-history.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  background-color: lightgray;
+}
 #task__wrapper__box .task__wrapper__description p {
   text-align: left;
   margin: 2% 0 0 2%;

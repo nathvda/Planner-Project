@@ -181,6 +181,28 @@ header{
             .task__wrapper__head__done{
                 width: 35%;
                 height: 75%;
+                
+            }
+            .ToDo{
+                background-image: url(./svg/hourglass-top.svg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                border: none;
+                background-color:lightgray;
+            }
+            .Done{
+                background-image: url(./svg/check-lg.svg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                border: none;
+                background-color:lightgray;
+            }
+            .Doing{
+                background-image: url(./svg/clock-history.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                border: none;
+                background-color:lightgray;
             }
         }
     }

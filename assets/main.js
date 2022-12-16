@@ -13,7 +13,7 @@ console.log(trying);
 
 export let TASKS = [
   {
-    name: "jardinage de merde je suis vraiment nulle",
+    name: "jardinage de merde je suis ",
     description: "manger du chocolat",
     date: "2022-12-13",
     delay: -224935422,
