@@ -144,6 +144,9 @@ header #currentTasks {
 }
 #task__wrapper__box .task__wrapper__head .task__wrapper__head__title__time .task__wrapper__head__title {
   font-size: 1.5rem;
+  width: 8ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 #task__wrapper__box .task__wrapper__head .task__wrapper__head__title__time .task__wrapper__head__time {
   font-size: 0.8rem;
@@ -186,6 +189,8 @@ header #currentTasks {
 #task__wrapper__box .task__wrapper__description {
   display: flex;
   flex-direction: column;
+  position: relative;
+  min-height: 3rem;
 }
 #task__wrapper__box .task__wrapper__description .task__wrapper__description__delete {
   text-align: right;
@@ -194,9 +199,13 @@ header #currentTasks {
   width: 3vw;
   height: 3vw;
   margin: 1%;
+  background-color: transparent;
   background-image: url(./svg/trash3-fill.svg);
   background-size: contain;
   border: none;
+  position: absolute;
+  right: 0;
+  top: 0.5rem;
 }
 #task__wrapper__box .task__wrapper__description p {
   text-align: left;
@@ -265,6 +274,21 @@ header #currentTasks {
 
 #descripForm.showFilters {
   visibility: visible;
+}
+
+#descriptionForm__button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-self: center;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  font-weight: bolder;
+  background-image: linear-gradient(90deg, #dfb600, #D11149);
+  padding: 1em;
+  border: none;
+  border-radius: 0.5rem;
+  color: #F1F1F1;
 }
 
 @media screen and (min-width: 768px) {
