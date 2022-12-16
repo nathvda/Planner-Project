@@ -106,10 +106,14 @@ function AddingTask(name, description, date, type, status, remainingTime) {
   task_desc.setAttribute("id", "task__wrapper__description");
   task_desc.classList.add("task__wrapper__description");
 
-  let desc_delete = document.createElement("div");
+  let desc_delete=document.createElement("div");
   desc_delete.setAttribute("id", "task__wrapper__description__delete");
-  desc_delete.classList.add(
-    "task__wrapper__description__delete",
+  desc_delete.classList.add("task__wrapper__description__delete");
+
+  let desc_delete_b = document.createElement("button");
+  desc_delete_b.setAttribute("id", "task__wrapper__description__delete__button");
+  desc_delete_b.classList.add(
+    "task__wrapper__description__delete__button",
     type
   );
 
@@ -129,6 +133,7 @@ function AddingTask(name, description, date, type, status, remainingTime) {
   date_done.appendChild(b_done);
   task_desc.appendChild(p_desc);
   task_desc.appendChild(desc_delete);
+  desc_delete.appendChild(desc_delete_b);
 
 }
 
