@@ -2,53 +2,9 @@ import { remainingTime, checkDelay } from "./modules/Calculations.js";
 import { sortBy } from "./modules/Sorting.js";
 import { NewTask } from "./modules/Class.js";
 
-// Creating new Object
-let trying = new NewTask(
-  "jardinage",
-  "manger du chocolat",
-  "2022-12-13",
-  "dormir"
-);
-console.log(trying);
+let TASKS = [];
 
-export let TASKS = [
-  {
-    name: "jardinage de merde je suis ",
-    description: "manger du chocolat",
-    date: "2022-12-13",
-    delay: -224935422,
-    remainingTime: "3d ago",
-    type: "Sport",
-    status: "ToDo",
-  },
-  {
-   name: "jardinage",
-   description: "manger du chocolat",
-   date: "2022-12-13",
-   delay: -224935422,
-   remainingTime: "3d ago",
-   type: "Homework",
-   status: "Done",
- },
- {
-   name: "jardinage",
-   description: "manger du chocolat",
-   date: "2022-12-13",
-   delay: -224935422,
-   remainingTime: "3d ago",
-   type: "Purchase",
-   status: "Doing",
- },
- {
-   name: "jardinage",
-   description: "manger du chocolat",
-   date: "2022-12-13",
-   delay: -224935422,
-   remainingTime: "3d ago",
-   type: "Home",
-   status: "Doing",
- },
-];
+loadObject();
 
 // AddingTask
 function AddingTask(name, description, date, type, status, remainingTime) {
@@ -64,10 +20,7 @@ function AddingTask(name, description, date, type, status, remainingTime) {
 
   let head_color = document.createElement("div");
   head_color.setAttribute("id", "task__wrapper__head__color");
-  head_color.classList.add(
-    "task__wrapper__head__color",
-    type
-  );
+  head_color.classList.add("task__wrapper__head__color",type);
 
   let title_time = document.createElement("div");
   title_time.setAttribute("id", "task__wrapper__head__title__time");
@@ -129,11 +82,21 @@ function AddingTask(name, description, date, type, status, remainingTime) {
   date_done.appendChild(b_done);
   task_desc.appendChild(p_desc);
   task_desc.appendChild(desc_delete);
-
 }
 
-function CreatingTask(){
-   for(let elem of TASKS){
+CreatingTask(TASKS) 
+
+function CreatingTask(ToCreate){
+
+  loadObject();
+
+  document.getElementById("task__wrapper").innerHTML = "";
+
+  if (ToCreate == null){
+    return
+  }
+
+  for(let elem of ToCreate){
       let nom=elem["name"];
       let descript=elem["description"];
       let time=elem["date"];
@@ -143,11 +106,6 @@ function CreatingTask(){
       AddingTask(nom, descript, time, types, faire, reste);
    }
 }
-
-
-
-CreatingTask()
-
 
 function getInfo() {
   let nameTask = document.getElementById("dtaskName").value;
@@ -178,33 +136,68 @@ function getInfo() {
     valueOption1,
     valueOption2
   );
-  console.log(task);
 
+  if (TASKS == null){
+     TASKS = [];
+  }
+
+  console.log(task);
   TASKS.push(task);
   console.log(TASKS);
 
   saveObject();
-
-  return TASKS;
+  CreatingTask(TASKS);
 }
 
 let subButton = document.getElementById("descriptionForm__button");
 subButton.addEventListener("click", getInfo);
 
-// DisplayingTask
-
 // ChangingStatus
+/*
+let buttonTodo = document.getElementById("task__wrapper").children;
+for ( let i = 0; i < buttonTodo.length ; i++)
 
-// let buttonTodo = document.getElementById("task__wrapper__head__done");
-// buttonTodo.addEventListener('click', () => {
-   
-//    console.log("À remplir ici");
+buttonTodo[i].addEventListener('click', (e) => {
 
-// })
+    console.log(e.target.classList);
+    console.log("À remplir ici");
+    TASKS[i].status = "DONE";
+    CreatingTask(TASKS);
+    
+  })
+*/
 
 // sorting stuff
 let sorting = document.getElementsByName("tasks")[0];
-sorting.addEventListener("change", sortBy);
+sorting.addEventListener("change", () => {
+  loadObject();
+  sortBy(TASKS);
+  hiding();
+  saveObject();
+});
+
+let showOrNot = document.getElementById("show");
+
+function hiding(){
+
+let alpha = showOrNot.querySelector('input[type="radio"]:checked').value;
+let ToShow = TASKS.filter((elem) => elem.status == alpha);
+
+CreatingTask(ToShow);
+
+if (alpha == "All"){
+    CreatingTask(TASKS);
+    console.log("???");
+}
+}
+
+showOrNot.addEventListener('change', () => {
+loadObject();
+sortBy(TASKS);
+hiding();
+saveObject();
+});
+
 
 // Open menus
 /** iden = the id of the button */
@@ -230,25 +223,20 @@ formButton.addEventListener("click", () => {
 // LocalStorageSaving
 
 function saveObject() {
-  window.localStorage.setItem("Tasks", JSON.stringify(TASKS));
+  localStorage.setItem("Tasks", JSON.stringify(TASKS));
 }
 
 function loadObject() {
-  let loadObject = window.localStorage.getItem("Tasks");
+  let loadObject = localStorage.getItem("Tasks");
   TASKS = JSON.parse(loadObject);
 }
 
-window.addEventListener("load", loadObject);
-
-remainingTime();
-
-// DisplayRemainingTime
-
-
 //Display number of task
-
 function displayCurrentTasks(){
-
+  if (TASKS == null){
+    return
+  }
 document.getElementById("currentTasks").innerHTML = TASKS.length;
 }
+
 displayCurrentTasks();
