@@ -189,6 +189,7 @@ header #currentTasks {
 }
 #task__wrapper__box .task__wrapper__description .task__wrapper__description__delete {
   text-align: right;
+  height: 100%;
 }
 #task__wrapper__box .task__wrapper__description .task__wrapper__description__delete .task__wrapper__description__delete__button {
   width: 3vw;
@@ -196,6 +197,7 @@ header #currentTasks {
   margin: 1%;
   background-image: url(./svg/trash3-fill.svg);
   background-size: contain;
+  background-repeat: no-repeat;
   border: none;
 }
 #task__wrapper__box .task__wrapper__description p {
