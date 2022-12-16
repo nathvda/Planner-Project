@@ -221,7 +221,7 @@ header #currentTasks {
 #descripForm {
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   visibility: hidden;
   font-family: "Inter";
   background-color: #F1F1F1;
