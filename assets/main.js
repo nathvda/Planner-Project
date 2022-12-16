@@ -153,11 +153,19 @@ let subButton = document.getElementById("descriptionForm__button");
 subButton.addEventListener("click", getInfo);
 
 // ChangingStatus
+/*
+let buttonTodo = document.getElementById("task__wrapper").children;
+for ( let i = 0; i < buttonTodo.length ; i++)
 
-let buttonTodo = document.getElementById("task__wrapper__head__done");
-buttonTodo.addEventListener('click', () => {
-  console.log("À remplir ici");
-})
+buttonTodo[i].addEventListener('click', (e) => {
+
+    console.log(e.target.classList);
+    console.log("À remplir ici");
+    TASKS[i].status = "DONE";
+    CreatingTask(TASKS);
+    
+  })
+*/
 
 // sorting stuff
 let sorting = document.getElementsByName("tasks")[0];
@@ -189,7 +197,6 @@ sortBy(TASKS);
 hiding();
 saveObject();
 });
-
 
 
 // Open menus

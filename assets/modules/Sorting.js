@@ -6,9 +6,7 @@ export function sortBy(ToSort){
     
     if (alpha == "remainingTime"){
     let TASKS = ToSort.sort((a,b) => a.delay - b.delay);
-    console.log(TASKS);
     } else if (alpha == "taskName"){
     let TASKS = ToSort.sort((a,b) => a.name > b.name);
-    console.log(TASKS);
     }}
     
