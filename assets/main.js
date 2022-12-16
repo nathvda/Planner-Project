@@ -83,7 +83,6 @@ function CreatingTask(){
 
   document.getElementById("task__wrapper").innerHTML = "";
 
-
    for(let elem of TASKS){
       let nom=elem["name"];
       let descript=elem["description"];
