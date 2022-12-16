@@ -14,7 +14,7 @@ console.log(trying);
 export let TASKS = [
   {
     name: "jardinage",
-    description: "manger du chocolat",
+    description: "manger du chocolat manger du chocolat manger du chocolat manger du chocolat manger du chocolat manger du chocolat manger du chocolat manger du chocolat manger du chocolat manger du chocolat manger du chocolat manger du chocolat manger du chocolat manger du chocolat manger du chocolat manger du choco",
     date: "2022-12-13",
     delay: -224935422,
     remainingTime: "3d ago",
@@ -106,6 +106,13 @@ function AddingTask(name, description, date, type, status, remainingTime) {
   task_desc.setAttribute("id", "task__wrapper__description");
   task_desc.classList.add("task__wrapper__description");
 
+  let desc_delete = document.createElement("div");
+  desc_delete.setAttribute("id", "task__wrapper__description__delete");
+  desc_delete.classList.add(
+    "task__wrapper__description__delete",
+    type
+  );
+
   let p_desc = document.createElement("p");
   let p_desctexte=document.createTextNode(description);
   p_desc.appendChild(p_desctexte);
@@ -121,6 +128,7 @@ function AddingTask(name, description, date, type, status, remainingTime) {
   date_done.appendChild(p_date);
   date_done.appendChild(b_done);
   task_desc.appendChild(p_desc);
+  task_desc.appendChild(desc_delete);
 
 }
 

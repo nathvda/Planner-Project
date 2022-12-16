@@ -162,12 +162,21 @@ header #currentTasks {
   width: 35%;
   height: 75%;
 }
+#task__wrapper__box .task__wrapper__description {
+  display: flex;
+  flex-direction: column;
+}
+#task__wrapper__box .task__wrapper__description .task__wrapper__description__delete {
+  padding-right: 2vw;
+  width: 4vw;
+  height: 4vw;
+  background-image: url(./svg/trash3-fill.svg);
+  background-size: cover;
+}
 #task__wrapper__box .task__wrapper__description p {
   text-align: left;
   margin: 2% 0 0 2%;
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content;
+  height: 7rem;
 }
 
 /* FORM */
