@@ -82,7 +82,6 @@ function AddingTask(name, description, date, type, status, remainingTime) {
   date_done.appendChild(b_done);
   task_desc.appendChild(p_desc);
   task_desc.appendChild(desc_delete);
-
 }
 
 CreatingTask(TASKS) 
@@ -147,7 +146,7 @@ function getInfo() {
   console.log(TASKS);
 
   saveObject();
-  CreatingTask();
+  CreatingTask(TASKS);
 }
 
 let subButton = document.getElementById("descriptionForm__button");
@@ -165,8 +164,8 @@ let sorting = document.getElementsByName("tasks")[0];
 sorting.addEventListener("change", () => {
   loadObject();
   sortBy(TASKS);
+  hiding();
   saveObject();
-  CreatingTask();
 });
 
 let showOrNot = document.getElementById("show");
@@ -176,15 +175,21 @@ function hiding(){
 let alpha = showOrNot.querySelector('input[type="radio"]:checked').value;
 let ToShow = TASKS.filter((elem) => elem.status == alpha);
 
-console.log(ToShow);
 CreatingTask(ToShow);
 
 if (alpha == "All"){
-  CreatingTask(TASKS);
+    CreatingTask(TASKS);
+    console.log("???");
 }
 }
 
-showOrNot.addEventListener('change', (e) => hiding());
+showOrNot.addEventListener('change', () => {
+loadObject();
+sortBy(TASKS);
+hiding();
+saveObject();
+});
+
 
 
 // Open menus
@@ -218,8 +223,8 @@ function loadObject() {
   let loadObject = localStorage.getItem("Tasks");
   TASKS = JSON.parse(loadObject);
 }
-//Display number of task
 
+//Display number of task
 function displayCurrentTasks(){
   if (TASKS == null){
     return
