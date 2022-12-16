@@ -11,16 +11,6 @@ let month = (date.getMonth())+1;
 let year = date.getFullYear();
 document.getElementById("dtaskDate").value = `${year}-${(month < 10) ? `0${month}` : `${month}`}-${(day < 10) ? `0${day}` : `${day}`}`;
 
-document.body.addEventListener("load", loadScreen);
-
-function loadScreen(){
-  setTimeout(()=>{
-    document.getElementById("loadingScreen").classList.remove("visible");
-}, 3000);
-
-setTimeout(()=> {document.getElementById("loadingScreen").remove()},4000)
-}
-
 // AddingTask
 function AddingTask(name, description, date, type, status, remainingTime, x) {
 
