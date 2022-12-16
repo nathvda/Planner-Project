@@ -138,6 +138,10 @@ header #currentTasks {
   background-image: url(./svg/bicycle.svg);
   background-size: cover;
 }
+#task__wrapper__box .task__wrapper__head .Other {
+  background-image: url(./svg/stars.svg);
+  background-size: cover;
+}
 #task__wrapper__box .task__wrapper__head .task__wrapper__head__title__time {
   text-align: left;
   padding-left: 15vw;
